@@ -20,15 +20,27 @@
                                 <rect key="frame" x="288" y="285" width="25" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="light"/>
+                                <connections>
+                                    <outlet property="delegate" destination="C2H-Np-Pwk" id="eqY-E2-POD"/>
+                                </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWH-DE-wC9">
+                                <rect key="frame" x="271" y="120" width="59" height="120"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="100"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="AWH-DE-wC9" firstAttribute="centerX" secondItem="29B-vI-dVM" secondAttribute="centerX" id="4Ls-Fd-58y"/>
                             <constraint firstItem="2cY-FG-hq6" firstAttribute="centerX" secondItem="29B-vI-dVM" secondAttribute="centerX" id="4a0-Y5-IQD"/>
+                            <constraint firstItem="AWH-DE-wC9" firstAttribute="top" secondItem="3jN-7e-Gkw" secondAttribute="bottom" constant="100" id="b0r-XY-DcB"/>
                             <constraint firstItem="2cY-FG-hq6" firstAttribute="centerY" secondItem="29B-vI-dVM" secondAttribute="centerY" id="jT2-bs-3LI"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="amountLabel" destination="AWH-DE-wC9" id="L0V-Hb-eP8"/>
                         <outlet property="hiddenTextField" destination="2cY-FG-hq6" id="HHI-G8-jyK"/>
                     </connections>
                 </viewController>

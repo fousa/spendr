@@ -13,6 +13,11 @@ class InputViewController: UIViewController {
     // MARK: - Outlets
 
     @IBOutlet var hiddenTextField: UITextField!
+    @IBOutlet var amountLabel: UILabel!
+
+    // MARK: - View model
+
+    private let viewModel = InputViewModel()
 
     // MARK: - View flow
 
@@ -20,6 +25,17 @@ class InputViewController: UIViewController {
         super.viewDidLoad()
 
         hiddenTextField.becomeFirstResponder()
+    }
+
+}
+
+extension InputViewController: UITextFieldDelegate {
+
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        let amountText: NSString = (textField.text ?? "") as NSString
+        viewModel.amountString = amountText.stringByReplacingCharactersInRange(range, withString: string)
+        amountLabel.text = viewModel.amountString
+        return true
     }
 
 }
