@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		048A3F101D6CC14000CAA80C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048A3F0F1D6CC14000CAA80C /* CloudKit.framework */; };
 		624BACDF1D6C69EA00CBA79C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BACDE1D6C69EA00CBA79C /* AppDelegate.swift */; };
 		624BACE61D6C69EA00CBA79C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 624BACE51D6C69EA00CBA79C /* Assets.xcassets */; };
 		624BACE91D6C69EA00CBA79C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 624BACE71D6C69EA00CBA79C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		048A3F0E1D6CC13E00CAA80C /* Spendr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Spendr.entitlements; sourceTree = "<group>"; };
+		048A3F0F1D6CC14000CAA80C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		624BACDB1D6C69EA00CBA79C /* Spendr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spendr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		624BACDE1D6C69EA00CBA79C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		624BACE51D6C69EA00CBA79C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -25,12 +28,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				048A3F101D6CC14000CAA80C /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		048A3F111D6CC16D00CAA80C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				048A3F0F1D6CC14000CAA80C /* CloudKit.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 		624BACD21D6C69EA00CBA79C = {
 			isa = PBXGroup;
 			children = (
@@ -50,6 +62,7 @@
 		624BACDD1D6C69EA00CBA79C /* Spendr */ = {
 			isa = PBXGroup;
 			children = (
+				048A3F111D6CC16D00CAA80C /* Frameworks */,
 				624BACF01D6C6A1E00CBA79C /* Supporting Files */,
 				624BACF11D6C6A2400CBA79C /* UI */,
 				624BACDE1D6C69EA00CBA79C /* AppDelegate.swift */,
@@ -61,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				624BACEA1D6C69EA00CBA79C /* Info.plist */,
+				048A3F0E1D6CC13E00CAA80C /* Spendr.entitlements */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -107,6 +121,14 @@
 					624BACDA1D6C69EA00CBA79C = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 743AM63YFU;
+						SystemCapabilities = {
+							com.apple.DataProtection = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -253,6 +275,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Spendr/Supporting Files/Spendr.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = "Spendr/Supporting Files/Info.plist";
@@ -267,6 +290,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Spendr/Supporting Files/Spendr.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = "Spendr/Supporting Files/Info.plist";
