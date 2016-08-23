@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		048A3F101D6CC14000CAA80C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048A3F0F1D6CC14000CAA80C /* CloudKit.framework */; };
+		048A3F141D6CC4E200CAA80C /* Input.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048A3F131D6CC4E200CAA80C /* Input.storyboard */; };
+		048A3F161D6CC57F00CAA80C /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A3F151D6CC57F00CAA80C /* InputViewController.swift */; };
 		624BACDF1D6C69EA00CBA79C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BACDE1D6C69EA00CBA79C /* AppDelegate.swift */; };
 		624BACE61D6C69EA00CBA79C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 624BACE51D6C69EA00CBA79C /* Assets.xcassets */; };
 		624BACE91D6C69EA00CBA79C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 624BACE71D6C69EA00CBA79C /* LaunchScreen.storyboard */; };
@@ -16,6 +18,8 @@
 /* Begin PBXFileReference section */
 		048A3F0E1D6CC13E00CAA80C /* Spendr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Spendr.entitlements; sourceTree = "<group>"; };
 		048A3F0F1D6CC14000CAA80C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		048A3F131D6CC4E200CAA80C /* Input.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Input.storyboard; sourceTree = "<group>"; };
+		048A3F151D6CC57F00CAA80C /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		624BACDB1D6C69EA00CBA79C /* Spendr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spendr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		624BACDE1D6C69EA00CBA79C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		624BACE51D6C69EA00CBA79C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -43,6 +47,15 @@
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
+		048A3F121D6CC4D600CAA80C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				048A3F131D6CC4E200CAA80C /* Input.storyboard */,
+				048A3F151D6CC57F00CAA80C /* InputViewController.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		624BACD21D6C69EA00CBA79C = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				048A3F111D6CC16D00CAA80C /* Frameworks */,
+				048A3F121D6CC4D600CAA80C /* Modules */,
 				624BACF01D6C6A1E00CBA79C /* Supporting Files */,
 				624BACF11D6C6A2400CBA79C /* UI */,
 				624BACDE1D6C69EA00CBA79C /* AppDelegate.swift */,
@@ -156,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				624BACE91D6C69EA00CBA79C /* LaunchScreen.storyboard in Resources */,
+				048A3F141D6CC4E200CAA80C /* Input.storyboard in Resources */,
 				624BACE61D6C69EA00CBA79C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				624BACDF1D6C69EA00CBA79C /* AppDelegate.swift in Sources */,
+				048A3F161D6CC57F00CAA80C /* InputViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

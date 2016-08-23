@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="C2H-Np-Pwk">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Input View Controller-->
+        <scene sceneID="ob1-q6-Uka">
+            <objects>
+                <viewController id="C2H-Np-Pwk" customClass="InputViewController" customModule="Spendr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3jN-7e-Gkw"/>
+                        <viewControllerLayoutGuide type="bottom" id="9hI-4z-2ny"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="29B-vI-dVM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2cY-FG-hq6">
+                                <rect key="frame" x="288" y="285" width="25" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="light"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2cY-FG-hq6" firstAttribute="centerX" secondItem="29B-vI-dVM" secondAttribute="centerX" id="4a0-Y5-IQD"/>
+                            <constraint firstItem="2cY-FG-hq6" firstAttribute="centerY" secondItem="29B-vI-dVM" secondAttribute="centerY" id="jT2-bs-3LI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="hiddenTextField" destination="2cY-FG-hq6" id="HHI-G8-jyK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9l7-ZX-INf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1489" y="222"/>
+        </scene>
+    </scenes>
+</document>
