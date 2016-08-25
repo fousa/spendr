@@ -14,4 +14,12 @@ class TypeSelectionTableViewController: UITableViewController {
     
     private let viewModel = TypeSelectionTableViewModel()
     
+    // MARK: - View flow
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        viewModel.reload()
+    }
+    
 }
