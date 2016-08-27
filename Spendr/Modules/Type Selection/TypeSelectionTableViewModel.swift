@@ -14,7 +14,7 @@ class TypeSelectionTableViewModel {
 
     // MARK: - Properties
 
-    private(set) var expenseTypes = CollectionProperty<[String]>([])
+    private(set) var expenseTypes = CollectionProperty<[ExpenseType]>([])
 
     // MARK: - Internals
     
@@ -35,10 +35,10 @@ class TypeSelectionTableViewModel {
     private func fetchExpenseTypes() {
         database.performQuery(query, inZoneWithID: nil) { records, error in
             if let records = records {
-                let names = records.flatMap({ (record) -> String? in
-                    return record["name"] as! String?
-                })
-                self.expenseTypes.replace(names)
+                let expenseTypes = records.flatMap { record -> ExpenseType? in
+                    return ExpenseType(record: record)
+                }
+                self.expenseTypes.replace(expenseTypes)
             }
         }
     }

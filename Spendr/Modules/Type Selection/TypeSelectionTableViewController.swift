@@ -26,7 +26,9 @@ class TypeSelectionTableViewController: UITableViewController {
             guard let weakSelf = self else { return UITableViewCell() }
 
             let cell = weakSelf.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-            cell.textLabel?.text = expenseTypes[indexPath.row]
+            let expenseType = expenseTypes[indexPath.row]
+            cell.textLabel?.text = expenseType.name
+            cell.detailTextLabel?.text = expenseType.period
             return cell
         }
     }
