@@ -57,7 +57,7 @@
 			children = (
 				046BFF151D71B3F600312CA9 /* ExpenseType.swift */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		048A3F111D6CC16D00CAA80C /* Frameworks */ = {
@@ -81,10 +81,10 @@
 		624BACD21D6C69EA00CBA79C = {
 			isa = PBXGroup;
 			children = (
+				9F2F45ACD8838C25638FEFC1 /* Frameworks */,
+				B22E66B73AA99B86AFD7F81F /* Pods */,
 				624BACDC1D6C69EA00CBA79C /* Products */,
 				624BACDD1D6C69EA00CBA79C /* Spendr */,
-				B22E66B73AA99B86AFD7F81F /* Pods */,
-				9F2F45ACD8838C25638FEFC1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,8 +99,8 @@
 		624BACDD1D6C69EA00CBA79C /* Spendr */ = {
 			isa = PBXGroup;
 			children = (
-				046BFF141D71B3ED00312CA9 /* Models */,
 				048A3F111D6CC16D00CAA80C /* Frameworks */,
+				046BFF141D71B3ED00312CA9 /* Models */,
 				048A3F121D6CC4D600CAA80C /* Modules */,
 				624BACF01D6C6A1E00CBA79C /* Supporting Files */,
 				624BACF11D6C6A2400CBA79C /* UI */,
