@@ -11,9 +11,13 @@ import CloudKit
 
 struct ExpenseType {
 
+    // MARK: - Properties
+
     private(set) var name: String
     private(set) var period: String
     private(set) var record: CKRecord
+
+    // MARK: - Init
 
     init?(record: CKRecord) {
         guard let
