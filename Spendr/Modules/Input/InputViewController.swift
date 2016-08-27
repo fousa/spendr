@@ -9,6 +9,7 @@
 import UIKit
 import ReactiveUIKit
 import Delirium
+import Stella
 
 class InputViewController: UIViewController {
 
@@ -43,11 +44,27 @@ class InputViewController: UIViewController {
     @IBAction func save(sender: AnyObject) {
         if viewModel.valid {
             viewModel.save(expenseType: expenseType) { error in
-                self.navigationController?.popToRootViewControllerAnimated(true)
+                if let _ = error {
+                    self.error()
+                } else {
+                    self.success()
+                }
             }
         } else {
-            amountLabel.shake()
+            error()
         }
+    }
+
+    // MARK: - Handling
+
+    private func success() {
+        dispatch_on_main {
+            self.navigationController?.popToRootViewControllerAnimated(true)
+        }
+    }
+
+    private func error() {
+        amountLabel.shake()
     }
 
 }
