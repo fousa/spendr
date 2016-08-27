@@ -8,9 +8,14 @@
 
 import Foundation
 import CloudKit
+import ReactiveKit
 
 class TypeSelectionTableViewModel {
-    
+
+    // MARK: - Properties
+
+    private(set) var expenseTypes = CollectionProperty<[String]>([])
+
     // MARK: - Internals
     
     private let database = CKContainer.defaultContainer().publicCloudDatabase
@@ -18,13 +23,23 @@ class TypeSelectionTableViewModel {
         let predicate = NSPredicate(value: true)
         return CKQuery(recordType: "ExpenseType", predicate: predicate)
     }()
+
+    // MARK: - Init
+
+    init() {
+        fetchExpenseTypes()
+    }
     
     // MARK: - CloudKit
     
-    func reload() {
+    private func fetchExpenseTypes() {
         database.performQuery(query, inZoneWithID: nil) { records, error in
-            print(error)
-            print(records)
+            if let records = records {
+                let names = records.flatMap({ (record) -> String? in
+                    return record["name"] as! String?
+                })
+                self.expenseTypes.replace(names)
+            }
         }
     }
     

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ReactiveKit
+import ReactiveUIKit
 
 class TypeSelectionTableViewController: UITableViewController {
     
@@ -18,8 +20,15 @@ class TypeSelectionTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewModel.reload()
+
+        // Setup bindings.
+        viewModel.expenseTypes.bindTo(tableView, animated: false) { [weak self] indexPath, expenseTypes, tableView -> UITableViewCell in
+            guard let weakSelf = self else { return UITableViewCell() }
+
+            let cell = weakSelf.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+            cell.textLabel?.text = expenseTypes[indexPath.row]
+            return cell
+        }
     }
     
 }
