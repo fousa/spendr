@@ -1,16 +1,19 @@
 PODS:
+  - Delirium (0.5.0)
   - ReactiveKit (2.1.1)
   - ReactiveUIKit (2.0.1):
     - ReactiveKit (~> 2.0)
 
 DEPENDENCIES:
+  - Delirium (~> 0.5)
   - ReactiveKit (~> 2.1)
   - ReactiveUIKit (~> 2.0)
 
 SPEC CHECKSUMS:
+  Delirium: 297b40b269e677f60ec4637e1b604f15103d8d59
   ReactiveKit: 93374d66000dc629896472541d22157d6083bf30
   ReactiveUIKit: af6e401a61d196502267ff216b7ac6f4c37c0dc5
 
-PODFILE CHECKSUM: 835ee070d3ccef523aa75d24b3afcd5f4abb9c17
+PODFILE CHECKSUM: 501558fa953074d11b29416bd1aa0a5cc2771b6b
 
 COCOAPODS: 1.0.1
