@@ -39,6 +39,12 @@ class InputViewModel: NSObject {
         }.disposeIn(rBag)
     }
 
+    // MARK: - Validation
+
+    var valid: Bool {
+        return amount.value > 0
+    }
+
     // MARK: - Converting
 
     private func convert(rawAmount rawAmount: String?) -> Double {

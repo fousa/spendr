@@ -8,6 +8,7 @@
 
 import UIKit
 import ReactiveUIKit
+import Delirium
 
 class InputViewController: UIViewController {
 
@@ -40,7 +41,11 @@ class InputViewController: UIViewController {
     // MARK: - Actions
 
     @IBAction func save(sender: AnyObject) {
-        navigationController?.popToRootViewControllerAnimated(true)
+        if viewModel.valid {
+            navigationController?.popToRootViewControllerAnimated(true)
+        } else {
+            amountLabel.shake()
+        }
     }
 
 }
