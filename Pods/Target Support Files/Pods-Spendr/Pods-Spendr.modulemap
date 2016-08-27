@@ -1,0 +1,6 @@
+framework module Pods_Spendr {
+  umbrella header "Pods-Spendr-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -11,6 +11,7 @@
 		048A3F141D6CC4E200CAA80C /* Input.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048A3F131D6CC4E200CAA80C /* Input.storyboard */; };
 		048A3F161D6CC57F00CAA80C /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A3F151D6CC57F00CAA80C /* InputViewController.swift */; };
 		048A3F181D6CC64100CAA80C /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A3F171D6CC64100CAA80C /* InputViewModel.swift */; };
+		4CBB5E46DE16F5215EAE2D36 /* Pods_Spendr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A28F54AFF02CE391822B1F /* Pods_Spendr.framework */; };
 		624BACDF1D6C69EA00CBA79C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BACDE1D6C69EA00CBA79C /* AppDelegate.swift */; };
 		624BACE61D6C69EA00CBA79C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 624BACE51D6C69EA00CBA79C /* Assets.xcassets */; };
 		624BACE91D6C69EA00CBA79C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 624BACE71D6C69EA00CBA79C /* LaunchScreen.storyboard */; };
@@ -31,6 +32,9 @@
 		624BACEA1D6C69EA00CBA79C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6294A9581D6F26E20088E18C /* TypeSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeSelectionTableViewController.swift; sourceTree = "<group>"; };
 		6294A95A1D6F270A0088E18C /* TypeSelectionTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeSelectionTableViewModel.swift; sourceTree = "<group>"; };
+		C1A28F54AFF02CE391822B1F /* Pods_Spendr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spendr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D907964315827C9A6499DB42 /* Pods-Spendr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spendr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spendr/Pods-Spendr.release.xcconfig"; sourceTree = "<group>"; };
+		DE2E18EC29D849DB071D82B4 /* Pods-Spendr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spendr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spendr/Pods-Spendr.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				048A3F101D6CC14000CAA80C /* CloudKit.framework in Frameworks */,
+				4CBB5E46DE16F5215EAE2D36 /* Pods_Spendr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +73,8 @@
 			children = (
 				624BACDC1D6C69EA00CBA79C /* Products */,
 				624BACDD1D6C69EA00CBA79C /* Spendr */,
+				B22E66B73AA99B86AFD7F81F /* Pods */,
+				9F2F45ACD8838C25638FEFC1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +134,23 @@
 			path = "Type Selection";
 			sourceTree = "<group>";
 		};
+		9F2F45ACD8838C25638FEFC1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1A28F54AFF02CE391822B1F /* Pods_Spendr.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B22E66B73AA99B86AFD7F81F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE2E18EC29D849DB071D82B4 /* Pods-Spendr.debug.xcconfig */,
+				D907964315827C9A6499DB42 /* Pods-Spendr.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 624BACED1D6C69EA00CBA79C /* Build configuration list for PBXNativeTarget "Spendr" */;
 			buildPhases = (
+				5EC7B708B9DDD65650EE5C1D /* [CP] Check Pods Manifest.lock */,
 				624BACD71D6C69EA00CBA79C /* Sources */,
 				624BACD81D6C69EA00CBA79C /* Frameworks */,
 				624BACD91D6C69EA00CBA79C /* Resources */,
+				8D3337146FCD281C0F60EAB4 /* [CP] Embed Pods Frameworks */,
+				A028850A4875C2E05D6AF5F0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -201,6 +228,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5EC7B708B9DDD65650EE5C1D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8D3337146FCD281C0F60EAB4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Spendr/Pods-Spendr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A028850A4875C2E05D6AF5F0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Spendr/Pods-Spendr-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		624BACD71D6C69EA00CBA79C /* Sources */ = {
@@ -317,6 +392,7 @@
 		};
 		624BACEE1D6C69EA00CBA79C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE2E18EC29D849DB071D82B4 /* Pods-Spendr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Spendr/Supporting Files/Spendr.entitlements";
@@ -332,6 +408,7 @@
 		};
 		624BACEF1D6C69EA00CBA79C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D907964315827C9A6499DB42 /* Pods-Spendr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Spendr/Supporting Files/Spendr.entitlements";
