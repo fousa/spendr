@@ -16,7 +16,8 @@ struct ExpenseType {
     private(set) var record: CKRecord
 
     init?(record: CKRecord) {
-        guard let name = record["name"] as? String,
+        guard let
+            name = record["name"] as? String,
             period = record["period"] as? String else {
             return nil
         }

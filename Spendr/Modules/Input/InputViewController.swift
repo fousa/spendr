@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReactiveUIKit
 
 class InputViewController: UIViewController {
 
@@ -29,17 +30,10 @@ class InputViewController: UIViewController {
         super.viewDidLoad()
 
         hiddenTextField.becomeFirstResponder()
-    }
 
-}
-
-extension InputViewController: UITextFieldDelegate {
-
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        let amountText: NSString = (textField.text ?? "") as NSString
-        viewModel.amountString = amountText.stringByReplacingCharactersInRange(range, withString: string)
-        amountLabel.text = viewModel.amountString
-        return true
+        // Setup bindings.
+        viewModel.amountFormatted.bindTo(amountLabel.rText)
+        hiddenTextField.rText.bindTo(viewModel.amountString)
     }
 
 }
