@@ -32,5 +32,16 @@ class TypeSelectionTableViewController: UITableViewController {
             return cell
         }
     }
+
+    // MARK: - Segues
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let
+            selectedIndexPath = tableView.indexPathForSelectedRow,
+            controller = segue.destinationViewController as? InputViewController {
+            let expenseType = viewModel.expenseTypes.value[selectedIndexPath.row]
+            controller.expenseType = expenseType
+        }
+    }
     
 }

@@ -10,6 +10,10 @@ import UIKit
 
 class InputViewController: UIViewController {
 
+    // MARK: - Data
+
+    var expenseType: ExpenseType!
+
     // MARK: - Outlets
 
     @IBOutlet var hiddenTextField: UITextField!
