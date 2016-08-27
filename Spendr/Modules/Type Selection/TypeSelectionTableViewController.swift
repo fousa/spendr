@@ -22,6 +22,7 @@ class TypeSelectionTableViewController: UITableViewController {
         super.viewDidLoad()
 
         // Setup bindings.
+        viewModel.title.bindTo(navigationItem.rTitle)
         viewModel.expenseTypes.bindTo(tableView, animated: false) { [weak self] indexPath, expenseTypes, tableView -> UITableViewCell in
             guard let weakSelf = self else { return UITableViewCell() }
 

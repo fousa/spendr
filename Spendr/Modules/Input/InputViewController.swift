@@ -29,6 +29,7 @@ class InputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = expenseType.name
         hiddenTextField.becomeFirstResponder()
 
         // Setup bindings.

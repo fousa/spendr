@@ -14,6 +14,7 @@ class TypeSelectionTableViewModel {
 
     // MARK: - Properties
 
+    private(set) var title = Property<String>("Selecteer een type")
     private(set) var expenseTypes = CollectionProperty<[ExpenseType]>([])
 
     // MARK: - Internals
