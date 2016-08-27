@@ -3,17 +3,20 @@ PODS:
   - ReactiveKit (2.1.1)
   - ReactiveUIKit (2.0.1):
     - ReactiveKit (~> 2.0)
+  - Stella (0.4.1)
 
 DEPENDENCIES:
   - Delirium (~> 0.5)
   - ReactiveKit (~> 2.1)
   - ReactiveUIKit (~> 2.0)
+  - Stella (~> 0.4)
 
 SPEC CHECKSUMS:
   Delirium: 297b40b269e677f60ec4637e1b604f15103d8d59
   ReactiveKit: 93374d66000dc629896472541d22157d6083bf30
   ReactiveUIKit: af6e401a61d196502267ff216b7ac6f4c37c0dc5
+  Stella: d158572e518e4254ab00dba7e7786995b961a695
 
-PODFILE CHECKSUM: 501558fa953074d11b29416bd1aa0a5cc2771b6b
+PODFILE CHECKSUM: 73d677251e137ea7f7d91b5535d919e78549eb58
 
 COCOAPODS: 1.0.1
