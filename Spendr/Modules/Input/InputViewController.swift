@@ -42,7 +42,9 @@ class InputViewController: UIViewController {
 
     @IBAction func save(sender: AnyObject) {
         if viewModel.valid {
-            navigationController?.popToRootViewControllerAnimated(true)
+            viewModel.save(expenseType: expenseType) { error in
+                self.navigationController?.popToRootViewControllerAnimated(true)
+            }
         } else {
             amountLabel.shake()
         }

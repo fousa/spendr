@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CloudKit
 import ReactiveKit
 
 class InputViewModel: NSObject {
@@ -24,6 +25,8 @@ class InputViewModel: NSObject {
         formatter.numberStyle = .CurrencyStyle
         return formatter
     }()
+
+    private let database = CKContainer.defaultContainer().privateCloudDatabase
 
     // MARK: - Init
 
@@ -43,6 +46,18 @@ class InputViewModel: NSObject {
 
     var valid: Bool {
         return amount.value > 0
+    }
+
+    // MARK: - Creation
+
+    func save(expenseType expenseType: ExpenseType, completion: (error: NSError?) -> ()) {
+        let expenseRecord = CKRecord(recordType: "Expense")
+        expenseRecord["amount"] = amount.value
+        expenseRecord["date"] = NSDate()
+        expenseRecord["type"] = CKReference(recordID: expenseType.record.recordID, action: .None)
+        database.saveRecord(expenseRecord) { record, error in
+            completion(error: error)
+        }
     }
 
     // MARK: - Converting
