@@ -30,13 +30,24 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6d-At-Uyd">
+                                <rect key="frame" x="283" y="304" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="C2H-Np-Pwk" eventType="touchUpInside" id="Q6T-do-O8I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="AWH-DE-wC9" secondAttribute="trailing" constant="10" id="0SX-1Q-EuO"/>
                             <constraint firstItem="AWH-DE-wC9" firstAttribute="centerX" secondItem="29B-vI-dVM" secondAttribute="centerX" id="4Ls-Fd-58y"/>
                             <constraint firstItem="2cY-FG-hq6" firstAttribute="centerX" secondItem="29B-vI-dVM" secondAttribute="centerX" id="4a0-Y5-IQD"/>
+                            <constraint firstItem="h6d-At-Uyd" firstAttribute="centerX" secondItem="29B-vI-dVM" secondAttribute="centerX" id="CyE-un-uYY"/>
                             <constraint firstItem="AWH-DE-wC9" firstAttribute="top" secondItem="3jN-7e-Gkw" secondAttribute="bottom" constant="100" id="b0r-XY-DcB"/>
                             <constraint firstItem="2cY-FG-hq6" firstAttribute="centerY" secondItem="29B-vI-dVM" secondAttribute="centerY" id="jT2-bs-3LI"/>
+                            <constraint firstItem="h6d-At-Uyd" firstAttribute="top" secondItem="AWH-DE-wC9" secondAttribute="bottom" constant="20" id="nil-9Z-uNL"/>
+                            <constraint firstItem="AWH-DE-wC9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="29B-vI-dVM" secondAttribute="leading" constant="10" id="w4N-Jd-2jW"/>
                         </constraints>
                     </view>
                     <connections>

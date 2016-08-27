@@ -37,4 +37,10 @@ class InputViewController: UIViewController {
         hiddenTextField.rText.bindTo(viewModel.amountString)
     }
 
+    // MARK: - Actions
+
+    @IBAction func save(sender: AnyObject) {
+        navigationController?.popToRootViewControllerAnimated(true)
+    }
+
 }
