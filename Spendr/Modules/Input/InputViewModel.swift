@@ -50,12 +50,15 @@ class InputViewModel: NSObject {
 
     // MARK: - Creation
 
-    func save(expenseType expenseType: ExpenseType, completion: (error: NSError?) -> ()) {
-        let expenseRecord = CKRecord(recordType: "Expense")
-        expenseRecord["amount"] = amount.value
-        expenseRecord["date"] = NSDate()
-        expenseRecord["type"] = CKReference(recordID: expenseType.record.recordID, action: .None)
-        database.saveRecord(expenseRecord) { record, error in
+    func save(expenseType expenseType: ExpenseType, completion: (error: ErrorType?) -> ()) {
+        let expense = Expense(expenseType: expenseType)
+        expense.amount = amount.value
+        expense.createdAt = NSDate()
+
+        do {
+            try DatabaseHandler.shared.save(expense: expense)
+            completion(error: nil)
+        } catch {
             completion(error: error)
         }
     }

@@ -41,17 +41,26 @@ class DatabaseHandler {
 
         printBreadcrumb("Parsed", expenseTypes.count, "expenseType records")
         try saveOnMainThread(records: expenseTypes)
+        printBreadcrumb(expenseTypes.count, "correctly saved")
 
         return expenseTypes
     }
 
+    // MARK: - Expense
+
+    func save(expense expense: Expense) throws {
+        printBreadcrumb("Save", expense.expenseType!.name, "to database")
+        try saveOnMainThread(records: [expense], update: false)
+        printBreadcrumb(expense.expenseType!.name, "correctly saved")
+    }
+
     // MARK: - Saving
 
-    private func saveOnMainThread(records records: [Object]) throws {
+    private func saveOnMainThread(records records: [Object], update: Bool = true) throws {
         func save() {
             do {
                 try realm.write {
-                    realm.add(records, update: true)
+                    realm.add(records, update: update)
                 }
             } catch {}
         }
