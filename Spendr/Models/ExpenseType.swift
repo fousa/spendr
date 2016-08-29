@@ -6,29 +6,42 @@
 //  Copyright © 2016 Fousa. All rights reserved.
 //
 
-import Foundation
 import CloudKit
+import Realm
+import RealmSwift
 
-struct ExpenseType {
+enum ExpenseTypeError: ErrorType {
+    case invalidJSON
+}
+
+class ExpenseType: Object {
 
     // MARK: - Properties
 
-    private(set) var name: String
-    private(set) var period: String
-    private(set) var record: CKRecord
+    dynamic var name: String = ""
+    dynamic var period: String = ""
+    dynamic var recordName: String = ""
 
     // MARK: - Init
 
-    init?(record: CKRecord) {
+    convenience init(record: CKRecord) throws {
         guard let
             name = record["name"] as? String,
             period = record["period"] as? String else {
-            return nil
+                throw ExpenseTypeError.invalidJSON
         }
 
-        self.record = record
+        self.init()
+
+        self.recordName = record.recordID.recordName
         self.name = name
         self.period = period
+    }
+
+    // MARK: - Overrides
+
+    override static func primaryKey() -> String? {
+        return "recordName"
     }
 
 }
