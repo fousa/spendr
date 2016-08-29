@@ -35,7 +35,10 @@ class TypeSelectionTableViewModel {
     
     private func fetchExpenseTypes() {
         database.performQuery(query, inZoneWithID: nil) { records, error in
-            let _ = try? DatabaseHandler.shared.save(expenseTypeRecords: records)
+            do {
+                let expenseTypes = try DatabaseHandler.shared.save(expenseTypeRecords: records)
+                self.expenseTypes.replace(expenseTypes)
+            } catch {}
         }
     }
     

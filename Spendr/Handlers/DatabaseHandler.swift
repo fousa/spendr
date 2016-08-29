@@ -29,7 +29,7 @@ class DatabaseHandler {
 
     // MARK: - ExpenseType
 
-    func save(expenseTypeRecords records: [CKRecord]?) throws {
+    func save(expenseTypeRecords records: [CKRecord]?) throws -> [ExpenseType] {
         guard let records = records else {
             throw DatabaseHandlerError.noRecords
         }
@@ -40,9 +40,23 @@ class DatabaseHandler {
         }
 
         printBreadcrumb("Parsed", expenseTypes.count, "expenseType records")
-        try realm.write {
-            realm.add(expenseTypes, update: true)
+        try saveOnMainThread(records: expenseTypes)
+
+        return expenseTypes
+    }
+
+    // MARK: - Saving
+
+    private func saveOnMainThread(records records: [Object]) throws {
+        func save() {
+            do {
+                try realm.write {
+                    realm.add(records, update: true)
+                }
+            } catch {}
         }
+
+        dispatch_on_main(save)
     }
 
 }
