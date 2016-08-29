@@ -3,20 +3,28 @@ PODS:
   - ReactiveKit (2.1.1)
   - ReactiveUIKit (2.0.1):
     - ReactiveKit (~> 2.0)
+  - Realm (1.0.2):
+    - Realm/Headers (= 1.0.2)
+  - Realm/Headers (1.0.2)
+  - RealmSwift (1.0.2):
+    - Realm (= 1.0.2)
   - Stella (0.4.1)
 
 DEPENDENCIES:
   - Delirium (~> 0.5)
   - ReactiveKit (~> 2.1)
   - ReactiveUIKit (~> 2.0)
+  - RealmSwift (~> 1.0)
   - Stella (~> 0.4)
 
 SPEC CHECKSUMS:
   Delirium: 297b40b269e677f60ec4637e1b604f15103d8d59
   ReactiveKit: 93374d66000dc629896472541d22157d6083bf30
   ReactiveUIKit: af6e401a61d196502267ff216b7ac6f4c37c0dc5
+  Realm: 9d5c46a4d7d27958530a8dfc58f63a99e5c2cba3
+  RealmSwift: 82f3ac5e24530143dddfde2033acc0d308f27d96
   Stella: d158572e518e4254ab00dba7e7786995b961a695
 
-PODFILE CHECKSUM: 73d677251e137ea7f7d91b5535d919e78549eb58
+PODFILE CHECKSUM: f6ed207135583983ef86b4100db75afab7622487
 
 COCOAPODS: 1.0.1

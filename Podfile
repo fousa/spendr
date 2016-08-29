@@ -5,4 +5,5 @@ target 'Spendr' do
   pod 'ReactiveUIKit', '~> 2.0'
   pod 'Delirium',      '~> 0.5'
   pod 'Stella',        '~> 0.4'
+  pod 'RealmSwift',    '~> 1.0'
 end
