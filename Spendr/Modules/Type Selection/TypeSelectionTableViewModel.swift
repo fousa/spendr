@@ -6,40 +6,33 @@
 //  Copyright © 2016 Fousa. All rights reserved.
 //
 
-import Foundation
-import CloudKit
 import ReactiveKit
+import RealmSwift
+import Stella
 
 class TypeSelectionTableViewModel {
 
     // MARK: - Properties
 
-    private(set) var title = Property<String>("Selecteer een type")
+    private(set) var title = ReactiveKit.Property<String>("Selecteer een type")
     private(set) var expenseTypes = CollectionProperty<[ExpenseType]>([])
 
     // MARK: - Internals
-    
-    private let database = CKContainer.defaultContainer().publicCloudDatabase
-    private lazy var query: CKQuery = {
-        let predicate = NSPredicate(value: true)
-        return CKQuery(recordType: "ExpenseType", predicate: predicate)
-    }()
+
+    private var notificationToken: NotificationToken?
 
     // MARK: - Init
 
     init() {
-        fetchExpenseTypes()
-    }
-    
-    // MARK: - CloudKit
-    
-    private func fetchExpenseTypes() {
-        database.performQuery(query, inZoneWithID: nil) { records, error in
-            do {
-                let expenseTypes = try DatabaseHandler.shared.save(expenseTypeRecords: records)
-                self.expenseTypes.replace(expenseTypes)
-            } catch {}
+        notificationToken = DatabaseHandler.shared.expenseTypes.addNotificationBlock { results in
+            let expenseTypes = DatabaseHandler.shared.expenseTypes
+            printBreadcrumb("💡UI", expenseTypes.count)
+            self.expenseTypes.replace(Array(expenseTypes))
         }
+    }
+
+    deinit {
+        notificationToken?.stop()
     }
 
 }

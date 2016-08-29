@@ -17,11 +17,11 @@ enum DatabaseHandlerError: ErrorType {
 
 class DatabaseHandler {
 
-    // MARK: - Properties
+    // MARK: - Init
 
     static let shared = DatabaseHandler()
 
-    // MARK: - Internals
+    // MARK: - Database
 
     private lazy var realm: Realm = {
         return try! Realm()
@@ -29,19 +29,23 @@ class DatabaseHandler {
 
     // MARK: - ExpenseType
 
+    lazy var expenseTypes: Results<ExpenseType> = {
+        return self.realm.objects(ExpenseType.self)
+    }()
+
     func save(expenseTypeRecords records: [CKRecord]?) throws -> [ExpenseType] {
         guard let records = records else {
             throw DatabaseHandlerError.noRecords
         }
 
-        printBreadcrumb("Fetched", records.count, "expenseType records")
+        printBreadcrumb("💡Fetched", records.count)
         let expenseTypes = records.flatMap { record -> ExpenseType? in
             return try? ExpenseType(record: record)
         }
 
-        printBreadcrumb("Parsed", expenseTypes.count, "expenseType records")
+        printBreadcrumb("💡Parsed", expenseTypes.count)
         try saveOnMainThread(records: expenseTypes)
-        printBreadcrumb(expenseTypes.count, "correctly saved")
+        printBreadcrumb("💡Saved", expenseTypes.count)
 
         return expenseTypes
     }
@@ -49,9 +53,8 @@ class DatabaseHandler {
     // MARK: - Expense
 
     func save(expense expense: Expense) throws {
-        printBreadcrumb("Save", expense.expenseType!.name, "to database")
         try saveOnMainThread(records: [expense], update: false)
-        printBreadcrumb(expense.expenseType!.name, "correctly saved")
+        printBreadcrumb("💰Saved", expense.expenseType!.name)
     }
 
     // MARK: - Saving
