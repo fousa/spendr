@@ -58,14 +58,19 @@ class CloudHandler {
 
     private func save(expense expense: Expense) {
         if uploading.contains(expense.id) {
-            printBreadcrumb("💰 Already uploading", expense.id)
+            printBreadcrumb("💰Already uploading", expense.id)
             return
         }
 
         uploading.append(expense.id)
         database.saveRecord(expense.record) { record, error in
-            dispatch_on_main { 
-                printBreadcrumb("💰 Uploaded", expense.id)
+            dispatch_on_main {
+                let id = expense.id
+                try! DatabaseHandler.shared.delete(expense: expense)
+                if let index = self.uploading.indexOf(id) {
+                    self.uploading.removeAtIndex(index)
+                }
+                printBreadcrumb("💰Uploaded", id)
             }
         }
     }

@@ -61,6 +61,16 @@ class DatabaseHandler {
         printBreadcrumb("💰Saved", expense.expenseType!.name)
     }
 
+    func delete(expense expense: Expense) throws {
+        do {
+            try realm.write {
+                let id = expense.id
+                realm.delete(expense)
+                printBreadcrumb("💰Deleted", id)
+            }
+        } catch {}
+    }
+
     // MARK: - Saving
 
     private func saveOnMainThread(records records: [Object], update: Bool = true) throws {
