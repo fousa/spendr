@@ -38,7 +38,8 @@ class CloudHandler {
 
     // MARK: - Internals
 
-    private let database = CKContainer.defaultContainer().publicCloudDatabase
+    private let publicDatabase = CKContainer.defaultContainer().publicCloudDatabase
+    private let privateDatabase = CKContainer.defaultContainer().privateCloudDatabase
     private lazy var query: CKQuery = {
         let predicate = NSPredicate(value: true)
         return CKQuery(recordType: "ExpenseType", predicate: predicate)
@@ -47,7 +48,7 @@ class CloudHandler {
     // MARK: - Expense Types
 
     func fetchExpenseTypes() {
-        database.performQuery(query, inZoneWithID: nil) { records, error in
+        publicDatabase.performQuery(query, inZoneWithID: nil) { records, error in
             do {
                 let _ = try DatabaseHandler.shared.save(expenseTypeRecords: records)
             } catch {}
@@ -63,7 +64,7 @@ class CloudHandler {
         }
 
         uploading.append(expense.id)
-        database.saveRecord(expense.record) { record, error in
+        privateDatabase.saveRecord(expense.record) { record, error in
             dispatch_on_main {
                 let id = expense.id
                 try! DatabaseHandler.shared.delete(expense: expense)
