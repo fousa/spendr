@@ -52,6 +52,10 @@ class DatabaseHandler {
 
     // MARK: - Expense
 
+    lazy var expenses: Results<Expense> = {
+        return self.realm.objects(Expense.self)
+    }()
+
     func save(expense expense: Expense) throws {
         try saveOnMainThread(records: [expense], update: false)
         printBreadcrumb("💰Saved", expense.expenseType!.name)

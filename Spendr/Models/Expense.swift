@@ -10,14 +10,11 @@ import CloudKit
 import Realm
 import RealmSwift
 
-//enum ExpenseTypeError: ErrorType {
-//    case invalidJSON
-//}
-
 class Expense: Object {
 
     // MARK: - Properties
 
+    private(set) dynamic var id = NSUUID().UUIDString
     dynamic var expenseType: ExpenseType? = nil
     dynamic var amount: Double = 0
     dynamic var createdAt: NSDate? = nil
@@ -28,6 +25,17 @@ class Expense: Object {
         self.init()
 
         self.expenseType = expenseType
+    }
+
+    // MARK: - Cloud
+
+    var record: CKRecord {
+        let record = CKRecord(recordType: "Expense")
+        record["amount"] = amount
+        record["date"] = NSDate()
+        let recordID =  CKRecordID(recordName: expenseType!.recordName)
+        record["type"] = CKReference(recordID: recordID, action: .None)
+        return record
     }
 
 }

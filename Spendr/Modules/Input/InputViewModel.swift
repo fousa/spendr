@@ -9,6 +9,7 @@
 import Foundation
 import CloudKit
 import ReactiveKit
+import Stella
 
 class InputViewModel: NSObject {
 
@@ -50,17 +51,13 @@ class InputViewModel: NSObject {
 
     // MARK: - Creation
 
-    func save(expenseType expenseType: ExpenseType, completion: (error: ErrorType?) -> ()) {
+    func save(expenseType expenseType: ExpenseType) {
         let expense = Expense(expenseType: expenseType)
         expense.amount = amount.value
         expense.createdAt = NSDate()
 
-        do {
-            try DatabaseHandler.shared.save(expense: expense)
-            completion(error: nil)
-        } catch {
-            completion(error: error)
-        }
+        printBreadcrumb("💰Saving", expense.expenseType?.name, expense.amount, expense.createdAt)
+        try! DatabaseHandler.shared.save(expense: expense)
     }
 
     // MARK: - Converting

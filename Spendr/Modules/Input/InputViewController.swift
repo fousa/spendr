@@ -43,13 +43,8 @@ class InputViewController: UIViewController {
 
     @IBAction func save(sender: AnyObject) {
         if viewModel.valid {
-            viewModel.save(expenseType: expenseType) { error in
-                if let _ = error {
-                    self.error()
-                } else {
-                    self.success()
-                }
-            }
+            viewModel.save(expenseType: expenseType)
+            self.success()
         } else {
             error()
         }
