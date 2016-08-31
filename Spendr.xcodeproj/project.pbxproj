@@ -33,7 +33,7 @@
 		047CCC561D74CC1F00446784 /* CloudHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudHandler.swift; sourceTree = "<group>"; };
 		048A3F0E1D6CC13E00CAA80C /* Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Release.entitlements; sourceTree = "<group>"; };
 		048A3F0F1D6CC14000CAA80C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		048A3F131D6CC4E200CAA80C /* ExpenseTypeSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ExpenseTypeSelection.storyboard; path = ../ExpenseTypeSelection.storyboard; sourceTree = "<group>"; };
+		048A3F131D6CC4E200CAA80C /* ExpenseTypeSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ExpenseTypeSelection.storyboard; sourceTree = "<group>"; };
 		048A3F171D6CC64100CAA80C /* AmountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmountViewModel.swift; sourceTree = "<group>"; };
 		624BACDB1D6C69EA00CBA79C /* Spendr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spendr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		624BACDE1D6C69EA00CBA79C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -186,8 +186,7 @@
 				6294A9581D6F26E20088E18C /* ExpenseTypeSelectionTableViewController.swift */,
 				6294A95A1D6F270A0088E18C /* ExpenseTypeSelectionTableViewModel.swift */,
 			);
-			name = "Expense Type";
-			path = "Type Selection";
+			path = "Expense Type";
 			sourceTree = "<group>";
 		};
 		9F2F45ACD8838C25638FEFC1 /* Frameworks */ = {
