@@ -28,7 +28,7 @@
 		047CCC521D74C09A00446784 /* DatabaseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHandler.swift; sourceTree = "<group>"; };
 		047CCC541D74C94600446784 /* Expense.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		047CCC561D74CC1F00446784 /* CloudHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudHandler.swift; sourceTree = "<group>"; };
-		048A3F0E1D6CC13E00CAA80C /* Spendr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Spendr.entitlements; sourceTree = "<group>"; };
+		048A3F0E1D6CC13E00CAA80C /* Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Release.entitlements; sourceTree = "<group>"; };
 		048A3F0F1D6CC14000CAA80C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		048A3F131D6CC4E200CAA80C /* Input.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Input.storyboard; sourceTree = "<group>"; };
 		048A3F151D6CC57F00CAA80C /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +38,7 @@
 		624BACE51D6C69EA00CBA79C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		624BACE81D6C69EA00CBA79C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		624BACEA1D6C69EA00CBA79C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6291B7E51D76F12C002EC584 /* Debug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Debug.entitlements; sourceTree = "<group>"; };
 		6294A9581D6F26E20088E18C /* TypeSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeSelectionTableViewController.swift; sourceTree = "<group>"; };
 		6294A95A1D6F270A0088E18C /* TypeSelectionTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeSelectionTableViewModel.swift; sourceTree = "<group>"; };
 		C1A28F54AFF02CE391822B1F /* Pods_Spendr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spendr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,8 +71,8 @@
 		047CCC511D74C07A00446784 /* Handlers */ = {
 			isa = PBXGroup;
 			children = (
-				047CCC521D74C09A00446784 /* DatabaseHandler.swift */,
 				047CCC561D74CC1F00446784 /* CloudHandler.swift */,
+				047CCC521D74C09A00446784 /* DatabaseHandler.swift */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -129,8 +130,8 @@
 		624BACF01D6C6A1E00CBA79C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6291B7E41D76F0F4002EC584 /* Entitlements */,
 				624BACEA1D6C69EA00CBA79C /* Info.plist */,
-				048A3F0E1D6CC13E00CAA80C /* Spendr.entitlements */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -142,6 +143,15 @@
 				624BACE71D6C69EA00CBA79C /* LaunchScreen.storyboard */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		6291B7E41D76F0F4002EC584 /* Entitlements */ = {
+			isa = PBXGroup;
+			children = (
+				6291B7E51D76F12C002EC584 /* Debug.entitlements */,
+				048A3F0E1D6CC13E00CAA80C /* Release.entitlements */,
+			);
+			path = Entitlements;
 			sourceTree = "<group>";
 		};
 		6294A9561D6F26C80088E18C /* Input */ = {
@@ -427,7 +437,7 @@
 			baseConfigurationReference = DE2E18EC29D849DB071D82B4 /* Pods-Spendr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Spendr/Supporting Files/Spendr.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Spendr/Supporting Files/Entitlements/${CONFIGURATION}.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = "Spendr/Supporting Files/Info.plist";
@@ -443,7 +453,7 @@
 			baseConfigurationReference = D907964315827C9A6499DB42 /* Pods-Spendr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Spendr/Supporting Files/Spendr.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Spendr/Supporting Files/Entitlements/${CONFIGURATION}.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = "Spendr/Supporting Files/Info.plist";
