@@ -1,3 +1,5 @@
+install! 'cocoapods', share_schemes_for_development_pods: false
+
 target 'Spendr' do
   use_frameworks!
 
