@@ -10,7 +10,7 @@ import ReactiveKit
 import RealmSwift
 import Stella
 
-class TypeSelectionTableViewModel {
+class ExpenseTypeSelectionTableViewModel {
 
     // MARK: - Properties
 

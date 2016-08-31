@@ -12,7 +12,7 @@
 		047CCC551D74C94600446784 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CCC541D74C94600446784 /* Expense.swift */; };
 		047CCC571D74CC1F00446784 /* CloudHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CCC561D74CC1F00446784 /* CloudHandler.swift */; };
 		048A3F101D6CC14000CAA80C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048A3F0F1D6CC14000CAA80C /* CloudKit.framework */; };
-		048A3F141D6CC4E200CAA80C /* Input.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048A3F131D6CC4E200CAA80C /* Input.storyboard */; };
+		048A3F141D6CC4E200CAA80C /* ExpenseTypeSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048A3F131D6CC4E200CAA80C /* ExpenseTypeSelection.storyboard */; };
 		048A3F181D6CC64100CAA80C /* AmountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A3F171D6CC64100CAA80C /* AmountViewModel.swift */; };
 		4CBB5E46DE16F5215EAE2D36 /* Pods_Spendr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A28F54AFF02CE391822B1F /* Pods_Spendr.framework */; };
 		624BACDF1D6C69EA00CBA79C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BACDE1D6C69EA00CBA79C /* AppDelegate.swift */; };
@@ -22,8 +22,8 @@
 		6291B7E91D771B06002EC584 /* AmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291B7E81D771B06002EC584 /* AmountViewController.swift */; };
 		6291B7ED1D771F3D002EC584 /* UILabel+Bold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291B7EC1D771F3D002EC584 /* UILabel+Bold.swift */; };
 		6291B7EF1D772004002EC584 /* TappableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6291B7EE1D772004002EC584 /* TappableLabel.swift */; };
-		6294A9591D6F26E20088E18C /* TypeSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6294A9581D6F26E20088E18C /* TypeSelectionTableViewController.swift */; };
-		6294A95B1D6F270A0088E18C /* TypeSelectionTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6294A95A1D6F270A0088E18C /* TypeSelectionTableViewModel.swift */; };
+		6294A9591D6F26E20088E18C /* ExpenseTypeSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6294A9581D6F26E20088E18C /* ExpenseTypeSelectionTableViewController.swift */; };
+		6294A95B1D6F270A0088E18C /* ExpenseTypeSelectionTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6294A95A1D6F270A0088E18C /* ExpenseTypeSelectionTableViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,7 @@
 		047CCC561D74CC1F00446784 /* CloudHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudHandler.swift; sourceTree = "<group>"; };
 		048A3F0E1D6CC13E00CAA80C /* Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Release.entitlements; sourceTree = "<group>"; };
 		048A3F0F1D6CC14000CAA80C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		048A3F131D6CC4E200CAA80C /* Input.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Input.storyboard; sourceTree = "<group>"; };
+		048A3F131D6CC4E200CAA80C /* ExpenseTypeSelection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ExpenseTypeSelection.storyboard; path = ../ExpenseTypeSelection.storyboard; sourceTree = "<group>"; };
 		048A3F171D6CC64100CAA80C /* AmountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmountViewModel.swift; sourceTree = "<group>"; };
 		624BACDB1D6C69EA00CBA79C /* Spendr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spendr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		624BACDE1D6C69EA00CBA79C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,8 +45,8 @@
 		6291B7E81D771B06002EC584 /* AmountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmountViewController.swift; sourceTree = "<group>"; };
 		6291B7EC1D771F3D002EC584 /* UILabel+Bold.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Bold.swift"; sourceTree = "<group>"; };
 		6291B7EE1D772004002EC584 /* TappableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TappableLabel.swift; sourceTree = "<group>"; };
-		6294A9581D6F26E20088E18C /* TypeSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeSelectionTableViewController.swift; sourceTree = "<group>"; };
-		6294A95A1D6F270A0088E18C /* TypeSelectionTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeSelectionTableViewModel.swift; sourceTree = "<group>"; };
+		6294A9581D6F26E20088E18C /* ExpenseTypeSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseTypeSelectionTableViewController.swift; sourceTree = "<group>"; };
+		6294A95A1D6F270A0088E18C /* ExpenseTypeSelectionTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseTypeSelectionTableViewModel.swift; sourceTree = "<group>"; };
 		C1A28F54AFF02CE391822B1F /* Pods_Spendr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spendr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D907964315827C9A6499DB42 /* Pods-Spendr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spendr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spendr/Pods-Spendr.release.xcconfig"; sourceTree = "<group>"; };
 		DE2E18EC29D849DB071D82B4 /* Pods-Spendr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spendr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spendr/Pods-Spendr.debug.xcconfig"; sourceTree = "<group>"; };
@@ -95,8 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				6291B7EA1D771E98002EC584 /* Amount */,
-				6294A9571D6F26CC0088E18C /* Type Selection */,
-				048A3F131D6CC4E200CAA80C /* Input.storyboard */,
+				6294A9571D6F26CC0088E18C /* Expense Type */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -180,12 +179,14 @@
 			path = Compontens;
 			sourceTree = "<group>";
 		};
-		6294A9571D6F26CC0088E18C /* Type Selection */ = {
+		6294A9571D6F26CC0088E18C /* Expense Type */ = {
 			isa = PBXGroup;
 			children = (
-				6294A9581D6F26E20088E18C /* TypeSelectionTableViewController.swift */,
-				6294A95A1D6F270A0088E18C /* TypeSelectionTableViewModel.swift */,
+				048A3F131D6CC4E200CAA80C /* ExpenseTypeSelection.storyboard */,
+				6294A9581D6F26E20088E18C /* ExpenseTypeSelectionTableViewController.swift */,
+				6294A95A1D6F270A0088E18C /* ExpenseTypeSelectionTableViewModel.swift */,
 			);
+			name = "Expense Type";
 			path = "Type Selection";
 			sourceTree = "<group>";
 		};
@@ -278,7 +279,7 @@
 			files = (
 				6291B7E71D771AB2002EC584 /* Amount.storyboard in Resources */,
 				624BACE91D6C69EA00CBA79C /* LaunchScreen.storyboard in Resources */,
-				048A3F141D6CC4E200CAA80C /* Input.storyboard in Resources */,
+				048A3F141D6CC4E200CAA80C /* ExpenseTypeSelection.storyboard in Resources */,
 				624BACE61D6C69EA00CBA79C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,14 +341,14 @@
 			files = (
 				6291B7E91D771B06002EC584 /* AmountViewController.swift in Sources */,
 				047CCC551D74C94600446784 /* Expense.swift in Sources */,
-				6294A9591D6F26E20088E18C /* TypeSelectionTableViewController.swift in Sources */,
+				6294A9591D6F26E20088E18C /* ExpenseTypeSelectionTableViewController.swift in Sources */,
 				047CCC531D74C09A00446784 /* DatabaseHandler.swift in Sources */,
 				048A3F181D6CC64100CAA80C /* AmountViewModel.swift in Sources */,
 				6291B7ED1D771F3D002EC584 /* UILabel+Bold.swift in Sources */,
 				047CCC571D74CC1F00446784 /* CloudHandler.swift in Sources */,
 				046BFF161D71B3F600312CA9 /* ExpenseType.swift in Sources */,
 				624BACDF1D6C69EA00CBA79C /* AppDelegate.swift in Sources */,
-				6294A95B1D6F270A0088E18C /* TypeSelectionTableViewModel.swift in Sources */,
+				6294A95B1D6F270A0088E18C /* ExpenseTypeSelectionTableViewModel.swift in Sources */,
 				6291B7EF1D772004002EC584 /* TappableLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

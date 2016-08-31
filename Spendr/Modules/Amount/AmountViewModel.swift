@@ -16,7 +16,6 @@ class AmountViewModel: NSObject {
     // MARK: - Data
 
     private var amount: Double = 0
-    private var expenseType: ExpenseType?
 
     // MARK: - Formatting
 
@@ -25,7 +24,7 @@ class AmountViewModel: NSObject {
     }
 
     var formattedExpenseType: String {
-        return expenseType?.name ?? "???"
+        return expenseType.value?.name ?? "???"
     }
 
     var formattedLabel: String {
@@ -34,6 +33,7 @@ class AmountViewModel: NSObject {
 
     // MARK: - Properties
 
+    private(set) var expenseType = Property<ExpenseType?>(nil)
     private(set) var amountString = Property<String?>(nil)
     private(set) var labelString = Property<String?>("")
 
@@ -60,6 +60,12 @@ class AmountViewModel: NSObject {
             weakSelf.amount = weakSelf.convert(rawAmount: amountString)
             weakSelf.labelString.value = weakSelf.formattedLabel
         }.disposeIn(rBag)
+
+        expenseType.observeNext { [weak self] amountString in
+            guard let weakSelf = self else { return }
+            
+            weakSelf.labelString.value = weakSelf.formattedLabel
+        }.disposeIn(rBag)
     }
 
     // MARK: - Validation
@@ -70,13 +76,21 @@ class AmountViewModel: NSObject {
 
     // MARK: - Creation
 
-    func save(expenseType expenseType: ExpenseType) {
+    func save() {
+        guard let expenseType = expenseType.value where amount > 0 else {
+            printError("Incorrect input")
+            return
+        }
+
         let expense = Expense(expenseType: expenseType)
         expense.amount = amount
         expense.createdAt = NSDate()
 
         printBreadcrumb("💰Saving", expense.expenseType?.name, expense.amount, expense.createdAt)
         try! DatabaseHandler.shared.save(expense: expense)
+
+        amountString.value = "0"
+        self.expenseType.value = nil
     }
 
     // MARK: - Converting
