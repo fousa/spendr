@@ -28,8 +28,6 @@ class TappableLabel: UILabel {
             // Add a tap gesture to the label and
             addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(TappableLabel.tapped(_:))))
             userInteractionEnabled = true
-            
-            backgroundColor = UIColor.greenColor()
         }
     }
     
@@ -56,31 +54,13 @@ class TappableLabel: UILabel {
         textContainer.lineBreakMode = label.lineBreakMode
         layoutManager.addTextContainer(textContainer)
         
-//        guard let textRange = textRange else {
-//            return
-//        }
+        var glyphRange = NSRange()
+        layoutManager.characterRangeForGlyphRange(textRange, actualGlyphRange: &glyphRange)
         
-//        var glyphRange = NSRange()
-//        layoutManager.characterRangeForGlyphRange(textRange, actualGlyphRange: &glyphRange)
-//        
-//        // Lookup the tapped character and execute the block.
-//        let rect = layoutManager.boundingRectForGlyphRange(textRange, inTextContainer: textContainer)
-        
-//        let location = gesture.locationOfTouch(0, inView: label)
+        // Lookup the tapped character and execute the block.
+        let rect = layoutManager.boundingRectForGlyphRange(textRange, inTextContainer: textContainer)
         let location = gesture.locationInView(label)
-//        if CGRectContainsPoint(rect, location) {
-//            block?()
-//        }
-        
-        
-        
-        let characterIndex = layoutManager.characterIndexForPoint(location, inTextContainer: textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
-        print("characterIndex", characterIndex)
-        print("textRange.location", textRange.location)
-        print("textRange.length", textRange.length)
-        
-        print("-- in range", NSLocationInRange(characterIndex, textRange))
-        if characterIndex > textRange.location {
+        if CGRectContainsPoint(rect, location) {
             block?()
         }
     }

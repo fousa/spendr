@@ -11,13 +11,31 @@ import CloudKit
 import ReactiveKit
 import Stella
 
-class InputViewModel: NSObject {
+class AmountViewModel: NSObject {
+
+    // MARK: - Data
+
+    private var amount: Double = 0
+    private var expenseType: ExpenseType?
+
+    // MARK: - Formatting
+
+    var formattedAmount: String {
+        return formatter.stringFromNumber(amount)!
+    }
+
+    var formattedExpenseType: String {
+        return expenseType?.name ?? "???"
+    }
+
+    var formattedLabel: String {
+        return "I\nspent\n\(formattedAmount)\non my \(formattedExpenseType)\nbudget"
+    }
 
     // MARK: - Properties
 
-    private(set) var amount = Property<Double>(0)
-    private(set) var amountFormatted = Property<String>("0")
     private(set) var amountString = Property<String?>(nil)
+    private(set) var labelString = Property<String?>("")
 
     // MARK: - Internals
 
@@ -33,27 +51,28 @@ class InputViewModel: NSObject {
 
     override init() {
         super.init()
+        labelString.value = formattedLabel
 
         // Setup bindings
         amountString.observeNext { [weak self] amountString in
             guard let weakSelf = self else { return }
 
-            weakSelf.amount.value = weakSelf.convert(rawAmount: amountString)
-            weakSelf.amountFormatted.value = weakSelf.format(amount: weakSelf.amount.value)
+            weakSelf.amount = weakSelf.convert(rawAmount: amountString)
+            weakSelf.labelString.value = weakSelf.formattedLabel
         }.disposeIn(rBag)
     }
 
     // MARK: - Validation
 
     var valid: Bool {
-        return amount.value > 0
+        return amount > 0
     }
 
     // MARK: - Creation
 
     func save(expenseType expenseType: ExpenseType) {
         let expense = Expense(expenseType: expenseType)
-        expense.amount = amount.value
+        expense.amount = amount
         expense.createdAt = NSDate()
 
         printBreadcrumb("💰Saving", expense.expenseType?.name, expense.amount, expense.createdAt)
@@ -69,10 +88,6 @@ class InputViewModel: NSObject {
             return 0.0
         }
         return amount / 100.0
-    }
-
-    private func format(amount amount: Double) -> String {
-        return formatter.stringFromNumber(amount)!
     }
 
 }

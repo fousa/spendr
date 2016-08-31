@@ -13,8 +13,7 @@
 		047CCC571D74CC1F00446784 /* CloudHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047CCC561D74CC1F00446784 /* CloudHandler.swift */; };
 		048A3F101D6CC14000CAA80C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 048A3F0F1D6CC14000CAA80C /* CloudKit.framework */; };
 		048A3F141D6CC4E200CAA80C /* Input.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048A3F131D6CC4E200CAA80C /* Input.storyboard */; };
-		048A3F161D6CC57F00CAA80C /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A3F151D6CC57F00CAA80C /* InputViewController.swift */; };
-		048A3F181D6CC64100CAA80C /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A3F171D6CC64100CAA80C /* InputViewModel.swift */; };
+		048A3F181D6CC64100CAA80C /* AmountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A3F171D6CC64100CAA80C /* AmountViewModel.swift */; };
 		4CBB5E46DE16F5215EAE2D36 /* Pods_Spendr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A28F54AFF02CE391822B1F /* Pods_Spendr.framework */; };
 		624BACDF1D6C69EA00CBA79C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BACDE1D6C69EA00CBA79C /* AppDelegate.swift */; };
 		624BACE61D6C69EA00CBA79C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 624BACE51D6C69EA00CBA79C /* Assets.xcassets */; };
@@ -35,8 +34,7 @@
 		048A3F0E1D6CC13E00CAA80C /* Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Release.entitlements; sourceTree = "<group>"; };
 		048A3F0F1D6CC14000CAA80C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		048A3F131D6CC4E200CAA80C /* Input.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Input.storyboard; sourceTree = "<group>"; };
-		048A3F151D6CC57F00CAA80C /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
-		048A3F171D6CC64100CAA80C /* InputViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewModel.swift; sourceTree = "<group>"; };
+		048A3F171D6CC64100CAA80C /* AmountViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmountViewModel.swift; sourceTree = "<group>"; };
 		624BACDB1D6C69EA00CBA79C /* Spendr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spendr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		624BACDE1D6C69EA00CBA79C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		624BACE51D6C69EA00CBA79C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,7 +42,7 @@
 		624BACEA1D6C69EA00CBA79C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6291B7E51D76F12C002EC584 /* Debug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Debug.entitlements; sourceTree = "<group>"; };
 		6291B7E61D771AB2002EC584 /* Amount.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Amount.storyboard; sourceTree = "<group>"; };
-		6291B7E81D771B06002EC584 /* AmountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AmountViewController.swift; path = Input/AmountViewController.swift; sourceTree = "<group>"; };
+		6291B7E81D771B06002EC584 /* AmountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmountViewController.swift; sourceTree = "<group>"; };
 		6291B7EC1D771F3D002EC584 /* UILabel+Bold.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Bold.swift"; sourceTree = "<group>"; };
 		6291B7EE1D772004002EC584 /* TappableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TappableLabel.swift; sourceTree = "<group>"; };
 		6294A9581D6F26E20088E18C /* TypeSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeSelectionTableViewController.swift; sourceTree = "<group>"; };
@@ -96,9 +94,7 @@
 		048A3F121D6CC4D600CAA80C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				6291B7EB1D771F2B002EC584 /* Compontens */,
 				6291B7EA1D771E98002EC584 /* Amount */,
-				6294A9561D6F26C80088E18C /* Amount */,
 				6294A9571D6F26CC0088E18C /* Type Selection */,
 				048A3F131D6CC4E200CAA80C /* Input.storyboard */,
 			);
@@ -126,6 +122,7 @@
 		624BACDD1D6C69EA00CBA79C /* Spendr */ = {
 			isa = PBXGroup;
 			children = (
+				6291B7EB1D771F2B002EC584 /* Compontens */,
 				048A3F111D6CC16D00CAA80C /* Frameworks */,
 				047CCC511D74C07A00446784 /* Handlers */,
 				046BFF141D71B3ED00312CA9 /* Models */,
@@ -169,27 +166,18 @@
 			children = (
 				6291B7E61D771AB2002EC584 /* Amount.storyboard */,
 				6291B7E81D771B06002EC584 /* AmountViewController.swift */,
+				048A3F171D6CC64100CAA80C /* AmountViewModel.swift */,
 			);
-			name = Amount;
+			path = Amount;
 			sourceTree = "<group>";
 		};
 		6291B7EB1D771F2B002EC584 /* Compontens */ = {
 			isa = PBXGroup;
 			children = (
-				6291B7EC1D771F3D002EC584 /* UILabel+Bold.swift */,
 				6291B7EE1D772004002EC584 /* TappableLabel.swift */,
+				6291B7EC1D771F3D002EC584 /* UILabel+Bold.swift */,
 			);
-			name = Compontens;
-			sourceTree = "<group>";
-		};
-		6294A9561D6F26C80088E18C /* Amount */ = {
-			isa = PBXGroup;
-			children = (
-				048A3F151D6CC57F00CAA80C /* InputViewController.swift */,
-				048A3F171D6CC64100CAA80C /* InputViewModel.swift */,
-			);
-			name = Amount;
-			path = Input;
+			path = Compontens;
 			sourceTree = "<group>";
 		};
 		6294A9571D6F26CC0088E18C /* Type Selection */ = {
@@ -354,12 +342,11 @@
 				047CCC551D74C94600446784 /* Expense.swift in Sources */,
 				6294A9591D6F26E20088E18C /* TypeSelectionTableViewController.swift in Sources */,
 				047CCC531D74C09A00446784 /* DatabaseHandler.swift in Sources */,
-				048A3F181D6CC64100CAA80C /* InputViewModel.swift in Sources */,
+				048A3F181D6CC64100CAA80C /* AmountViewModel.swift in Sources */,
 				6291B7ED1D771F3D002EC584 /* UILabel+Bold.swift in Sources */,
 				047CCC571D74CC1F00446784 /* CloudHandler.swift in Sources */,
 				046BFF161D71B3F600312CA9 /* ExpenseType.swift in Sources */,
 				624BACDF1D6C69EA00CBA79C /* AppDelegate.swift in Sources */,
-				048A3F161D6CC57F00CAA80C /* InputViewController.swift in Sources */,
 				6294A95B1D6F270A0088E18C /* TypeSelectionTableViewModel.swift in Sources */,
 				6291B7EF1D772004002EC584 /* TappableLabel.swift in Sources */,
 			);
