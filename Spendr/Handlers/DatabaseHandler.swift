@@ -38,14 +38,14 @@ class DatabaseHandler {
             throw DatabaseHandlerError.noRecords
         }
 
-        printBreadcrumb("💡Fetched", records.count)
+        printBreadcrumb("💡Fetched expense types", records.count)
         let expenseTypes = records.flatMap { record -> ExpenseType? in
             return try? ExpenseType(record: record)
         }
 
-        printBreadcrumb("💡Parsed", expenseTypes.count)
+        printBreadcrumb("💡Parsed expense types", expenseTypes.count)
         try saveOnMainThread(records: expenseTypes)
-        printBreadcrumb("💡Saved", expenseTypes.count)
+        printBreadcrumb("💡Saved expense types", expenseTypes.count)
 
         return expenseTypes
     }
@@ -55,6 +55,20 @@ class DatabaseHandler {
     lazy var expenses: Results<Expense> = {
         return self.realm.objects(Expense.self)
     }()
+
+    func fetchExpenses(forMonth date: NSDate) -> Results<Expense> {
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Era, .Year, .Month, .Day], fromDate: date)
+        components.day = 1
+        let startDate = calendar.dateFromComponents(components)!
+
+        let monthComponents = NSDateComponents()
+        monthComponents.month = 1
+        let endDate = calendar.dateByAddingComponents(monthComponents, toDate: startDate, options: .MatchStrictly)!
+
+        let predicate = NSPredicate(format: "createdAt >= %@ AND createdAt < %@", argumentArray: [startDate, endDate])
+        return self.realm.objects(Expense.self).filter(predicate)
+    }
 
     func save(expense expense: Expense) throws {
         try saveOnMainThread(records: [expense], update: false)

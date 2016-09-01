@@ -27,8 +27,6 @@ class InputViewModel: NSObject {
         return formatter
     }()
 
-    private let database = CKContainer.defaultContainer().privateCloudDatabase
-
     // MARK: - Init
 
     override init() {

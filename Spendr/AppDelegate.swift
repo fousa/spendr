@@ -19,5 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         CloudHandler.shared.fetchExpenseTypes()
+        CloudHandler.shared.fetchExpenses(forMonth: NSDate())
     }
 }

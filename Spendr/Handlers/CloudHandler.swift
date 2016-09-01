@@ -13,6 +13,10 @@ import RealmSwift
 
 class CloudHandler {
 
+    // MARK: - Properties
+
+    private(set) var totalAmount = ReactiveKit.Property<Double>(0.0)
+
     // MARK: - Internals
 
     private var notificationToken: NotificationToken?
@@ -58,22 +62,28 @@ class CloudHandler {
     // MARK: - Expense
 
     func fetchExpenses(forMonth date: NSDate) {
-        let calendar = NSCalendar.currentCalendar()
+        let calendar = NSCalendar.autoupdatingCurrentCalendar()
         let components = calendar.components([.Era, .Year, .Month, .Day], fromDate: date)
         components.day = 1
+        components.timeZone = NSTimeZone(forSecondsFromGMT: 0)
         let startDate = calendar.dateFromComponents(components)!
 
         let monthComponents = NSDateComponents()
         monthComponents.month = 1
         let endDate = calendar.dateByAddingComponents(monthComponents, toDate: startDate, options: .MatchStrictly)!
 
-        let predicate = NSPredicate(format: "date >= %@ AND date < %@", argumentArray: [startDate, endDate])
+        let predicate = NSPredicate(format: "date >= %@ AND date < %@", startDate, endDate)
         let query = CKQuery(recordType: "Expense", predicate: predicate)
         privateDatabase.performQuery(query, inZoneWithID: nil) { records, error in
-            let total = records?.reduce(0.0, combine: { total, record -> Double in
-                return total + (record["amount"] as! Double)
-            }) ?? 0
-            printBreadcrumb("Total spent", total)
+            if let records = records {
+                printBreadcrumb("💰Fetched expenses", records.count)
+                dispatch_on_main({
+                    self.totalAmount.value = records.reduce(0.0, combine: { total, expense -> Double in
+                        return total + (expense["amount"] as! Double)
+                    })
+                    printBreadcrumb("💰Fetched total", self.totalAmount.value)
+                })
+            }
         }
     }
 

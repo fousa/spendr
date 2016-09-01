@@ -9,6 +9,10 @@
 import UIKit
 
 class DashboardViewController: UIViewController {
+
+    // MARK: - View Model
+
+    private let viewModel = DashboardViewModel()
     
     // MARK: - Outlets
     
@@ -19,15 +23,15 @@ class DashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        CloudHandler.shared.fetchExpenses(forMonth: NSDate())
-        
-        let amount = "18.000,00 €"
-        label.text = "You spent\n\(amount)\nthis month"
+        viewModel.amount.observeNext { amount in
+            self.label.text = self.viewModel.title
 
-        let attributes = [
-            NSFontAttributeName: UIFont.systemFontOfSize(label.font.pointSize, weight: UIFontWeightMedium)
-        ]
-        label.attributedText?.add(attributes: attributes, forSubstring: amount)
+            let attributes = [
+                NSFontAttributeName: UIFont.systemFontOfSize(self.label.font.pointSize, weight: UIFontWeightMedium)
+            ]
+            let formattedAmount = self.viewModel.formattedAmount
+            self.label.attributedText?.add(attributes: attributes, forSubstring: formattedAmount)
+        }.disposeIn(rBag)
     }
     
     // MARK: - Status bar 

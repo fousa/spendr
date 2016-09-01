@@ -54,7 +54,7 @@ class InputViewController: UIViewController {
 
     private func success() {
         dispatch_on_main {
-            self.navigationController?.popToRootViewControllerAnimated(true)
+            self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
         }
     }
 
