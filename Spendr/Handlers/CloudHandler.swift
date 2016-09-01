@@ -61,7 +61,7 @@ class CloudHandler {
 
     // MARK: - Expense
 
-    func fetchExpenses(forMonth date: NSDate) {
+    func fetchExpenses(forMonth date: NSDate, completion: ((expenses: [CKRecord]) -> ())? = nil) {
         let calendar = NSCalendar.autoupdatingCurrentCalendar()
         let components = calendar.components([.Era, .Year, .Month, .Day], fromDate: date)
         components.day = 1
@@ -82,6 +82,7 @@ class CloudHandler {
                         return total + (expense["amount"] as! Double)
                     })
                     printBreadcrumb("💰Fetched total", self.totalAmount.value)
+                    completion?(expenses: records)
                 })
             }
         }

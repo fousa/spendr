@@ -39,5 +39,10 @@ class DashboardViewController: UIViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+
+    // MARK: - Segue
+
+    @IBAction func unwindToDashboard(segue: UIStoryboardSegue) {
+    }
     
 }
