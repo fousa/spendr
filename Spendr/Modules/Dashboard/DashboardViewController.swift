@@ -20,7 +20,7 @@ class DashboardViewController: UIViewController {
         super.viewDidLoad()
         
         let amount = "18.000,00 €"
-        label.text = "I spent\n\(amount)\nthis month"
+        label.text = "You spent\n\(amount)\nthis month"
         
         let attributes = [
             NSForegroundColorAttributeName: UIColor(red:0.92,green:0.36,blue:0.33,alpha:1.00)
