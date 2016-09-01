@@ -30,6 +30,13 @@ this month</string>
                                 <color key="shadowColor" red="0.672298594366187" green="0.672298594366187" blue="0.672298594366187" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zw2-EW-2q4">
+                                <rect key="frame" x="517" y="516" width="63" height="64"/>
+                                <state key="normal" image="Add"/>
+                                <connections>
+                                    <segue destination="msb-FR-A9R" kind="presentation" id="KGw-NK-srG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -39,7 +46,9 @@ this month</string>
                             <constraint firstItem="wMe-XF-tSv" firstAttribute="top" secondItem="x4C-y5-lGD" secondAttribute="bottom" id="Osc-ex-YYE"/>
                             <constraint firstItem="oR1-kH-sNq" firstAttribute="top" secondItem="8fi-Vf-iDx" secondAttribute="top" constant="20" id="S9I-FQ-yEp"/>
                             <constraint firstAttribute="trailing" secondItem="oR1-kH-sNq" secondAttribute="trailing" constant="20" id="cao-af-ghg"/>
+                            <constraint firstItem="wMe-XF-tSv" firstAttribute="top" secondItem="Zw2-EW-2q4" secondAttribute="bottom" constant="20" id="kjB-gB-Xyt"/>
                             <constraint firstItem="oR1-kH-sNq" firstAttribute="leading" secondItem="8fi-Vf-iDx" secondAttribute="leading" constant="20" id="oQu-eG-iXZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Zw2-EW-2q4" secondAttribute="trailing" constant="20" id="q2T-qU-dHs"/>
                         </constraints>
                     </view>
                     <connections>
@@ -60,6 +69,7 @@ this month</string>
         </scene>
     </scenes>
     <resources>
+        <image name="Add" width="63" height="64"/>
         <image name="Background" width="1728" height="1152"/>
     </resources>
 </document>
