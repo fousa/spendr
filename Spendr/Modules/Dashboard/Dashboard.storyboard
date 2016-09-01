@@ -22,16 +22,33 @@
 18.000,00 €
 this month</string>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="46"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.49019607843137253" green="0.52156862745098043" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMs-r8-INj">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <color key="backgroundColor" red="0.90588235289999997" green="0.25882352939999997" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="cN0-NK-ybX"/>
+                                </constraints>
+                                <state key="normal" image="Add">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted" image="Add"/>
+                                <connections>
+                                    <segue destination="msb-FR-A9R" kind="presentation" id="mQC-Gf-dMN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wMe-XF-tSv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oR1-kH-sNq" secondAttribute="bottom" constant="20" id="G7k-7I-BWL"/>
+                            <constraint firstItem="wMe-XF-tSv" firstAttribute="top" secondItem="fMs-r8-INj" secondAttribute="bottom" id="JWw-iL-dgv"/>
+                            <constraint firstItem="fMs-r8-INj" firstAttribute="leading" secondItem="8fi-Vf-iDx" secondAttribute="leading" id="Me2-sE-e7B"/>
                             <constraint firstItem="oR1-kH-sNq" firstAttribute="top" secondItem="8fi-Vf-iDx" secondAttribute="top" constant="20" id="S9I-FQ-yEp"/>
                             <constraint firstAttribute="trailing" secondItem="oR1-kH-sNq" secondAttribute="trailing" constant="20" id="cao-af-ghg"/>
+                            <constraint firstAttribute="trailing" secondItem="fMs-r8-INj" secondAttribute="trailing" id="cgk-Z0-pJ9"/>
                             <constraint firstItem="oR1-kH-sNq" firstAttribute="leading" secondItem="8fi-Vf-iDx" secondAttribute="leading" constant="20" id="oQu-eG-iXZ"/>
+                            <constraint firstItem="fMs-r8-INj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oR1-kH-sNq" secondAttribute="bottom" constant="20" id="ot0-9R-zhz"/>
                         </constraints>
                     </view>
                     <connections>
@@ -42,5 +59,16 @@ this month</string>
             </objects>
             <point key="canvasLocation" x="1050" y="313"/>
         </scene>
+        <!--Input-->
+        <scene sceneID="vCO-HE-4xJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Input" id="msb-FR-A9R" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lsi-9q-QlG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1493" y="313"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Add" width="20" height="20"/>
+    </resources>
 </document>

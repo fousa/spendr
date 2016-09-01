@@ -21,7 +21,11 @@ class DashboardViewController: UIViewController {
         
         let amount = "18.000,00 €"
         label.text = "I spent\n\(amount)\nthis month"
-        label.attributedText?.add(attributes: [NSFontAttributeName: UIFont.systemFontOfSize(label.font.pointSize, weight: UIFontWeightBold)], forSubstring: amount)
+        
+        let attributes = [
+            NSForegroundColorAttributeName: UIColor(red:0.92,green:0.36,blue:0.33,alpha:1.00)
+        ]
+        label.attributedText?.add(attributes: attributes, forSubstring: amount)
     }
     
     // MARK: - Status bar 
