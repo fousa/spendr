@@ -19,7 +19,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="x4C-y5-lGD">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oR1-kH-sNq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oR1-kH-sNq" userLabel="Title Label">
                                 <rect key="frame" x="20" y="20" width="560" height="165"/>
                                 <string key="text">You spent 
 18.000,00 €
@@ -30,7 +30,11 @@ this month</string>
                                 <color key="shadowColor" red="0.672298594366187" green="0.672298594366187" blue="0.672298594366187" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zw2-EW-2q4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87d-Dm-gsn" userLabel="List Button">
+                                <rect key="frame" x="20" y="527" width="64" height="42"/>
+                                <state key="normal" image="List"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zw2-EW-2q4" userLabel="Add Button">
                                 <rect key="frame" x="517" y="516" width="63" height="64"/>
                                 <state key="normal" image="Add"/>
                                 <connections>
@@ -42,12 +46,14 @@ this month</string>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="x4C-y5-lGD" secondAttribute="trailing" id="6Ty-Xl-6dj"/>
                             <constraint firstItem="x4C-y5-lGD" firstAttribute="top" secondItem="8fi-Vf-iDx" secondAttribute="top" id="73e-FB-TDV"/>
+                            <constraint firstItem="87d-Dm-gsn" firstAttribute="leading" secondItem="8fi-Vf-iDx" secondAttribute="leading" constant="20" id="8lW-8n-8me"/>
                             <constraint firstItem="x4C-y5-lGD" firstAttribute="leading" secondItem="8fi-Vf-iDx" secondAttribute="leading" id="8z8-KN-CQC"/>
                             <constraint firstItem="wMe-XF-tSv" firstAttribute="top" secondItem="x4C-y5-lGD" secondAttribute="bottom" id="Osc-ex-YYE"/>
                             <constraint firstItem="oR1-kH-sNq" firstAttribute="top" secondItem="8fi-Vf-iDx" secondAttribute="top" constant="20" id="S9I-FQ-yEp"/>
                             <constraint firstAttribute="trailing" secondItem="oR1-kH-sNq" secondAttribute="trailing" constant="20" id="cao-af-ghg"/>
                             <constraint firstItem="wMe-XF-tSv" firstAttribute="top" secondItem="Zw2-EW-2q4" secondAttribute="bottom" constant="20" id="kjB-gB-Xyt"/>
                             <constraint firstItem="oR1-kH-sNq" firstAttribute="leading" secondItem="8fi-Vf-iDx" secondAttribute="leading" constant="20" id="oQu-eG-iXZ"/>
+                            <constraint firstItem="87d-Dm-gsn" firstAttribute="centerY" secondItem="Zw2-EW-2q4" secondAttribute="centerY" id="ohd-8o-qUx"/>
                             <constraint firstAttribute="trailing" secondItem="Zw2-EW-2q4" secondAttribute="trailing" constant="20" id="q2T-qU-dHs"/>
                         </constraints>
                     </view>
@@ -71,5 +77,6 @@ this month</string>
     <resources>
         <image name="Add" width="63" height="64"/>
         <image name="Background" width="1728" height="1152"/>
+        <image name="List" width="64" height="42"/>
     </resources>
 </document>
