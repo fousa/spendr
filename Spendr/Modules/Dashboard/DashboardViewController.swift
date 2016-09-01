@@ -10,4 +10,10 @@ import UIKit
 
 class DashboardViewController: UIViewController {
     
+    // MARK: - Status bar 
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
 }
