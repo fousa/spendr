@@ -18,6 +18,8 @@ class DashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        CloudHandler.shared.fetchExpenses(forMonth: NSDate())
         
         let amount = "18.000,00 €"
         label.text = "You spent\n\(amount)\nthis month"

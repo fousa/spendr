@@ -57,6 +57,26 @@ class CloudHandler {
 
     // MARK: - Expense
 
+    func fetchExpenses(forMonth date: NSDate) {
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Era, .Year, .Month, .Day], fromDate: date)
+        components.day = 1
+        let startDate = calendar.dateFromComponents(components)!
+
+        let monthComponents = NSDateComponents()
+        monthComponents.month = 1
+        let endDate = calendar.dateByAddingComponents(monthComponents, toDate: startDate, options: .MatchStrictly)!
+
+        let predicate = NSPredicate(format: "date >= %@ AND date < %@", argumentArray: [startDate, endDate])
+        let query = CKQuery(recordType: "Expense", predicate: predicate)
+        privateDatabase.performQuery(query, inZoneWithID: nil) { records, error in
+            let total = records?.reduce(0.0, combine: { total, record -> Double in
+                return total + (record["amount"] as! Double)
+            }) ?? 0
+            printBreadcrumb("Total spent", total)
+        }
+    }
+
     private func save(expense expense: Expense) {
         if uploading.contains(expense.id) {
             printBreadcrumb("💰Already uploading", expense.id)
