@@ -23,6 +23,7 @@
 		6294A95B1D6F270A0088E18C /* TypeSelectionTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6294A95A1D6F270A0088E18C /* TypeSelectionTableViewModel.swift */; };
 		62B8CEB01D7873C4005C0AF8 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62B8CEAF1D7873C4005C0AF8 /* Dashboard.storyboard */; };
 		62B8CEB21D78744E005C0AF8 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B8CEB11D78744E005C0AF8 /* DashboardViewController.swift */; };
+		62B8CEB51D7877EA005C0AF8 /* NSAttributedString+Substring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B8CEB41D7877EA005C0AF8 /* NSAttributedString+Substring.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		6294A95A1D6F270A0088E18C /* TypeSelectionTableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeSelectionTableViewModel.swift; sourceTree = "<group>"; };
 		62B8CEAF1D7873C4005C0AF8 /* Dashboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		62B8CEB11D78744E005C0AF8 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		62B8CEB41D7877EA005C0AF8 /* NSAttributedString+Substring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Substring.swift"; sourceTree = "<group>"; };
 		C1A28F54AFF02CE391822B1F /* Pods_Spendr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spendr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D907964315827C9A6499DB42 /* Pods-Spendr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spendr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Spendr/Pods-Spendr.release.xcconfig"; sourceTree = "<group>"; };
 		DE2E18EC29D849DB071D82B4 /* Pods-Spendr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spendr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Spendr/Pods-Spendr.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		624BACDD1D6C69EA00CBA79C /* Spendr */ = {
 			isa = PBXGroup;
 			children = (
+				62B8CEB31D7877DC005C0AF8 /* Components */,
 				048A3F111D6CC16D00CAA80C /* Frameworks */,
 				047CCC511D74C07A00446784 /* Handlers */,
 				046BFF141D71B3ED00312CA9 /* Models */,
@@ -184,6 +187,14 @@
 				62B8CEB11D78744E005C0AF8 /* DashboardViewController.swift */,
 			);
 			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		62B8CEB31D7877DC005C0AF8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				62B8CEB41D7877EA005C0AF8 /* NSAttributedString+Substring.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		9F2F45ACD8838C25638FEFC1 /* Frameworks */ = {
@@ -340,6 +351,7 @@
 				047CCC531D74C09A00446784 /* DatabaseHandler.swift in Sources */,
 				048A3F181D6CC64100CAA80C /* InputViewModel.swift in Sources */,
 				047CCC571D74CC1F00446784 /* CloudHandler.swift in Sources */,
+				62B8CEB51D7877EA005C0AF8 /* NSAttributedString+Substring.swift in Sources */,
 				046BFF161D71B3F600312CA9 /* ExpenseType.swift in Sources */,
 				624BACDF1D6C69EA00CBA79C /* AppDelegate.swift in Sources */,
 				62B8CEB21D78744E005C0AF8 /* DashboardViewController.swift in Sources */,
