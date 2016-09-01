@@ -10,6 +10,19 @@ import UIKit
 
 class DashboardViewController: UIViewController {
     
+    // MARK: - Outlets
+    
+    @IBOutlet var label: UILabel!
+    
+    // MARK: - View flow
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let amount = "18.000,00 €"
+        label.text = "I spent\n\(amount)\nthis month"
+    }
+    
     // MARK: - Status bar 
     
     override func prefersStatusBarHidden() -> Bool {
