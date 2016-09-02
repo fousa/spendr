@@ -43,12 +43,6 @@ class AmountViewController: UIViewController {
         }.disposeIn(rBag)
     }
 
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-
-        hiddenTextField.becomeFirstResponder()
-    }
-
     // MARK: - Actions
 
     @IBAction func save(sender: AnyObject) {

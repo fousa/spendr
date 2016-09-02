@@ -21,29 +21,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" keyboardAppearance="light"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ax-Oq-6fi" customClass="TappableLabel" customModule="Spendr" customModuleProvider="target">
-                                <rect key="frame" x="10" y="10" width="580" height="60"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4ax-Oq-6fi" customClass="TappableLabel" customModule="Spendr" customModuleProvider="target">
+                                <rect key="frame" x="10" y="10" width="580" height="580"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="100"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXk-4X-iVS">
-                                <rect key="frame" x="283" y="90" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="save:" destination="1sd-9w-60g" eventType="touchUpInside" id="yu7-C7-7ek"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="4ax-Oq-6fi" secondAttribute="trailing" constant="10" id="9Sc-5K-jF9"/>
                             <constraint firstItem="7El-jT-6Fr" firstAttribute="centerY" secondItem="irK-d7-u2r" secondAttribute="centerY" id="F91-k2-skD"/>
                             <constraint firstItem="7El-jT-6Fr" firstAttribute="centerX" secondItem="irK-d7-u2r" secondAttribute="centerX" id="WBu-f7-sKn"/>
-                            <constraint firstItem="HXk-4X-iVS" firstAttribute="centerX" secondItem="irK-d7-u2r" secondAttribute="centerX" id="m4l-0s-PuL"/>
+                            <constraint firstItem="Cad-Rl-k2y" firstAttribute="top" secondItem="4ax-Oq-6fi" secondAttribute="bottom" constant="10" id="dY7-Qo-SHA"/>
                             <constraint firstItem="4ax-Oq-6fi" firstAttribute="top" secondItem="irK-d7-u2r" secondAttribute="top" constant="10" id="qJG-ik-LrV"/>
                             <constraint firstItem="4ax-Oq-6fi" firstAttribute="leading" secondItem="irK-d7-u2r" secondAttribute="leading" constant="10" id="xl6-gK-J2D"/>
-                            <constraint firstItem="HXk-4X-iVS" firstAttribute="top" secondItem="4ax-Oq-6fi" secondAttribute="bottom" constant="20" id="yRK-7v-1cf"/>
                         </constraints>
                     </view>
                     <connections>

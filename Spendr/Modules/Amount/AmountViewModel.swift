@@ -24,7 +24,7 @@ class AmountViewModel: NSObject {
     }
 
     var formattedExpenseType: String {
-        return expenseType.value?.name ?? "???"
+        return "soaring"
     }
 
     var formattedLabel: String {
