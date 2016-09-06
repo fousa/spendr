@@ -23,5 +23,15 @@ class OverviewTableViewModel {
             self.expenses.replace(expenses)
         }
     }
+    
+    // MARK: - Expense types
+    
+    func expenseType(forExpense expense: CKRecord) -> ExpenseType? {
+        guard let expenseTypeReference = expense["type"] as? CKReference else {
+            return nil
+        }
+        
+        return DatabaseHandler.shared.expenseTypes.filter("recordName = '\(expenseTypeReference.recordID.recordName)'").first
+    }
 
 }

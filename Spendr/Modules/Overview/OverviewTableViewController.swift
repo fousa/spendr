@@ -26,13 +26,12 @@ class OverviewTableViewController: UITableViewController {
         viewModel.expenses.bindTo(tableView, animated: false) { [weak self] indexPath, expenses, tableView -> UITableViewCell in
             guard let weakSelf = self else { return UITableViewCell() }
 
-            let cell = weakSelf.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+            let cell = weakSelf.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ExpenseTableViewCell
+            
             let expenseRecord = expenses[indexPath.row]
+            let expenseType = weakSelf.viewModel.expenseType(forExpense: expenseRecord)
+            cell.configure(expense: expenseRecord, expenseType: expenseType)
 
-            cell.textLabel?.text = String(expenseRecord["date"] as! NSDate)
-
-            let amount = expenseRecord["amount"] as! Double
-            cell.detailTextLabel?.text = weakSelf.format(amount: amount)
             return cell
         }
     }
@@ -41,18 +40,6 @@ class OverviewTableViewController: UITableViewController {
 
     override func prefersStatusBarHidden() -> Bool {
         return true
-    }
-
-    // MARK: - Formatting
-
-    private lazy var formatter: NSNumberFormatter = {
-        let formatter = NSNumberFormatter()
-        formatter.numberStyle = .CurrencyStyle
-        return formatter
-    }()
-
-    private func format(amount amount: Double) -> String {
-        return formatter.stringFromNumber(amount)!
     }
 
 }
