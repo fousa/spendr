@@ -41,7 +41,7 @@ this month</string>
                                 <rect key="frame" x="517" y="516" width="63" height="64"/>
                                 <state key="normal" image="Add"/>
                                 <connections>
-                                    <segue destination="msb-FR-A9R" kind="presentation" id="KGw-NK-srG"/>
+                                    <segue destination="msb-FR-A9R" kind="presentation" identifier="Add" id="KGw-NK-srG"/>
                                 </connections>
                             </button>
                         </subviews>
