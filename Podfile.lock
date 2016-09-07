@@ -1,5 +1,6 @@
 PODS:
   - Delirium (0.5.0)
+  - Duvel (0.3.0)
   - ReactiveKit (2.1.1)
   - ReactiveUIKit (2.0.1):
     - ReactiveKit (~> 2.0)
@@ -12,6 +13,7 @@ PODS:
 
 DEPENDENCIES:
   - Delirium (~> 0.5)
+  - Duvel (~> 0.3)
   - ReactiveKit (~> 2.1)
   - ReactiveUIKit (~> 2.0)
   - RealmSwift (~> 1.0)
@@ -19,12 +21,13 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Delirium: 297b40b269e677f60ec4637e1b604f15103d8d59
+  Duvel: 976c604507ba443a10ee845b0cb1ec340805750d
   ReactiveKit: 93374d66000dc629896472541d22157d6083bf30
   ReactiveUIKit: af6e401a61d196502267ff216b7ac6f4c37c0dc5
   Realm: 9d5c46a4d7d27958530a8dfc58f63a99e5c2cba3
   RealmSwift: 82f3ac5e24530143dddfde2033acc0d308f27d96
   Stella: d158572e518e4254ab00dba7e7786995b961a695
 
-PODFILE CHECKSUM: 4091e75dbc477f50ead991649db9f6e39e9a3343
+PODFILE CHECKSUM: 4e78e6c3a85ce6417ed4b5c055ebd69f8fdf9ebc
 
 COCOAPODS: 1.0.1
