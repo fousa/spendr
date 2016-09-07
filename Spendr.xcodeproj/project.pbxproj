@@ -19,6 +19,8 @@
 		048A3F141D6CC4E200CAA80C /* Input.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 048A3F131D6CC4E200CAA80C /* Input.storyboard */; };
 		048A3F161D6CC57F00CAA80C /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A3F151D6CC57F00CAA80C /* InputViewController.swift */; };
 		048A3F181D6CC64100CAA80C /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A3F171D6CC64100CAA80C /* InputViewModel.swift */; };
+		04A2D96A1D80B24600E7869F /* Spendr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04A2D9681D80B24600E7869F /* Spendr.xcdatamodeld */; };
+		04A2D96C1D80B29600E7869F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A2D96B1D80B29600E7869F /* Category.swift */; };
 		4CBB5E46DE16F5215EAE2D36 /* Pods_Spendr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1A28F54AFF02CE391822B1F /* Pods_Spendr.framework */; };
 		622C63931D7EAC810080DEA0 /* ExpenseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622C63921D7EAC810080DEA0 /* ExpenseTableViewCell.swift */; };
 		624BACDF1D6C69EA00CBA79C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624BACDE1D6C69EA00CBA79C /* AppDelegate.swift */; };
@@ -45,6 +47,8 @@
 		048A3F131D6CC4E200CAA80C /* Input.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Input.storyboard; sourceTree = "<group>"; };
 		048A3F151D6CC57F00CAA80C /* InputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		048A3F171D6CC64100CAA80C /* InputViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputViewModel.swift; sourceTree = "<group>"; };
+		04A2D9691D80B24600E7869F /* Spendr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Spendr.xcdatamodel; sourceTree = "<group>"; };
+		04A2D96B1D80B29600E7869F /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		622C63921D7EAC810080DEA0 /* ExpenseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseTableViewCell.swift; sourceTree = "<group>"; };
 		624BACDB1D6C69EA00CBA79C /* Spendr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spendr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		624BACDE1D6C69EA00CBA79C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,8 +93,10 @@
 		046BFF141D71B3ED00312CA9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				04A2D96B1D80B29600E7869F /* Category.swift */,
 				047CCC541D74C94600446784 /* Expense.swift */,
 				046BFF151D71B3F600312CA9 /* ExpenseType.swift */,
+				04A2D9681D80B24600E7869F /* Spendr.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -267,7 +273,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Fousa;
 				TargetAttributes = {
 					624BACDA1D6C69EA00CBA79C = {
@@ -275,6 +281,9 @@
 						DevelopmentTeam = 743AM63YFU;
 						SystemCapabilities = {
 							com.apple.DataProtection = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 							com.apple.iCloud = {
@@ -377,9 +386,11 @@
 				047CCC531D74C09A00446784 /* DatabaseHandler.swift in Sources */,
 				0402F0B01D78A40A00283947 /* DashboardViewModel.swift in Sources */,
 				048A3F181D6CC64100CAA80C /* InputViewModel.swift in Sources */,
+				04A2D96A1D80B24600E7869F /* Spendr.xcdatamodeld in Sources */,
 				047CCC571D74CC1F00446784 /* CloudHandler.swift in Sources */,
 				62B8CEB51D7877EA005C0AF8 /* NSAttributedString+Substring.swift in Sources */,
 				046BFF161D71B3F600312CA9 /* ExpenseType.swift in Sources */,
+				04A2D96C1D80B29600E7869F /* Category.swift in Sources */,
 				624BACDF1D6C69EA00CBA79C /* AppDelegate.swift in Sources */,
 				62B8CEB21D78744E005C0AF8 /* DashboardViewController.swift in Sources */,
 				0402F0B51D78D41200283947 /* OverviewTableViewController.swift in Sources */,
@@ -542,6 +553,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		04A2D9681D80B24600E7869F /* Spendr.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				04A2D9691D80B24600E7869F /* Spendr.xcdatamodel */,
+			);
+			currentVersion = 04A2D9691D80B24600E7869F /* Spendr.xcdatamodel */;
+			path = Spendr.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 624BACD31D6C69EA00CBA79C /* Project object */;
 }
