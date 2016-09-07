@@ -9,6 +9,7 @@ PODS:
   - Realm/Headers (1.0.2)
   - RealmSwift (1.0.2):
     - Realm (= 1.0.2)
+  - Seam (0.6)
   - Stella (0.4.1)
 
 DEPENDENCIES:
@@ -17,6 +18,7 @@ DEPENDENCIES:
   - ReactiveKit (~> 2.1)
   - ReactiveUIKit (~> 2.0)
   - RealmSwift (~> 1.0)
+  - Seam (~> 0.6)
   - Stella (~> 0.4)
 
 SPEC CHECKSUMS:
@@ -26,8 +28,9 @@ SPEC CHECKSUMS:
   ReactiveUIKit: af6e401a61d196502267ff216b7ac6f4c37c0dc5
   Realm: 9d5c46a4d7d27958530a8dfc58f63a99e5c2cba3
   RealmSwift: 82f3ac5e24530143dddfde2033acc0d308f27d96
+  Seam: c19514bd03389906f7f5eb2f1bec449566c01c84
   Stella: d158572e518e4254ab00dba7e7786995b961a695
 
-PODFILE CHECKSUM: 4e78e6c3a85ce6417ed4b5c055ebd69f8fdf9ebc
+PODFILE CHECKSUM: e7db5787cbcd78971fb53f13be755f3caab6915e
 
 COCOAPODS: 1.0.1
