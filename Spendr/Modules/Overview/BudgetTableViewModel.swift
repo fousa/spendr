@@ -15,11 +15,13 @@ class BudgetTableViewModel {
     // MARK: - Properties
 
     private(set) var expenseTypes = CollectionProperty<[ExpenseType]>([])
+    private(set) var sortedExpenseTypes = CollectionProperty<[ExpenseType]>([])
 
     // MARK: - Initialization
 
     init() {
-        self.expenseTypes.replace(Array(DatabaseHandler.shared.expenseTypes))
+        expenseTypes.sort{ $0.amount > $1.amount }.bindTo(sortedExpenseTypes)
+        expenseTypes.replace(Array(DatabaseHandler.shared.expenseTypes))
 
         CloudHandler.shared.fetchExpenses(forMonth: NSDate()) { expenses in
             self.updateBudget(forExpenses: expenses)
