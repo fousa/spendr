@@ -22,18 +22,22 @@ class BudgetTableViewModel {
         self.expenseTypes.replace(Array(DatabaseHandler.shared.expenseTypes))
 
         CloudHandler.shared.fetchExpenses(forMonth: NSDate()) { expenses in
-//            self.expenses.replace(expenses)
+            self.updateBudget(forExpenses: expenses)
+
         }
     }
 
-    // MARK: - Expense types
+    // MARK: - Expenses
 
-//    func expenseType(forExpense expense: CKRecord) -> ExpenseType? {
-//        guard let expenseTypeReference = expense["type"] as? CKReference else {
-//            return nil
-//        }
-//
-//        return DatabaseHandler.shared.expenseTypes.filter("recordName = '\(expenseTypeReference.recordID.recordName)'").first
-//    }
+    private func updateBudget(forExpenses expenses: [CKRecord]) {
+        for expense in expenses {
+            if let
+                expenseTypeReference = expense["type"] as? CKReference,
+                index = expenseTypes.value.indexOf({ $0.recordName == expenseTypeReference.recordID.recordName }) {
+                expenseTypes.value[index].amount += expense["amount"] as! Double
+            }
+        }
+        self.expenseTypes.replace(self.expenseTypes.value)
+    }
 
 }
