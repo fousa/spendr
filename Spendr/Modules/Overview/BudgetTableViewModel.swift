@@ -14,24 +14,26 @@ class BudgetTableViewModel {
 
     // MARK: - Properties
 
-    private(set) var expenses = CollectionProperty<[CKRecord]>([])
+    private(set) var expenseTypes = CollectionProperty<[ExpenseType]>([])
 
     // MARK: - Initialization
 
     init() {
+        self.expenseTypes.replace(Array(DatabaseHandler.shared.expenseTypes))
+
         CloudHandler.shared.fetchExpenses(forMonth: NSDate()) { expenses in
-            self.expenses.replace(expenses)
+//            self.expenses.replace(expenses)
         }
     }
 
     // MARK: - Expense types
 
-    func expenseType(forExpense expense: CKRecord) -> ExpenseType? {
-        guard let expenseTypeReference = expense["type"] as? CKReference else {
-            return nil
-        }
+//    func expenseType(forExpense expense: CKRecord) -> ExpenseType? {
+//        guard let expenseTypeReference = expense["type"] as? CKReference else {
+//            return nil
+//        }
+//
+//        return DatabaseHandler.shared.expenseTypes.filter("recordName = '\(expenseTypeReference.recordID.recordName)'").first
+//    }
 
-        return DatabaseHandler.shared.expenseTypes.filter("recordName = '\(expenseTypeReference.recordID.recordName)'").first
-    }
-    
 }

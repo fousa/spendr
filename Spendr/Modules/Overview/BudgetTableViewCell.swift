@@ -19,11 +19,9 @@ class BudgetTableViewCell: UITableViewCell {
 
     // MARK: - Configure
 
-    func configure(expense expense: CKRecord, expenseType: ExpenseType?) {
-        expenseTypeLabel.text = expenseType?.name
-
-        let amount = expense["amount"] as! Double
-        expenseAmountLabel.text = format(amount: amount)
+    func configure(expenseType expenseType: ExpenseType) {
+        expenseTypeLabel.text = expenseType.name
+        expenseAmountLabel.text = format(amount: expenseType.amount)
     }
 
     // MARK: - Formatting

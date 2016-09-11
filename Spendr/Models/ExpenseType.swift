@@ -22,6 +22,8 @@ class ExpenseType: Object {
     dynamic var period: String = ""
     dynamic var recordName: String = ""
 
+    var amount: Double = 0
+
     // MARK: - Init
 
     convenience init(record: CKRecord) throws {
@@ -42,6 +44,10 @@ class ExpenseType: Object {
 
     override static func primaryKey() -> String? {
         return "recordName"
+    }
+
+    override static func ignoredProperties() -> [String] {
+        return ["amount"]
     }
 
 }

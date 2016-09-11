@@ -17,25 +17,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o4C-n9-Ri7" userLabel="Budget Container View">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <connections>
-                                    <segue destination="r02-Fh-1L5" kind="embed" id="2HK-bb-r7v"/>
-                                </connections>
-                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYx-Up-zAP" userLabel="Overview Container View">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <connections>
                                     <segue destination="bEH-0x-FIH" kind="embed" id="XoW-MY-EEz"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4C-n9-Ri7" userLabel="Budget Container View">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <connections>
+                                    <segue destination="r02-Fh-1L5" kind="embed" id="2HK-bb-r7v"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aYx-Up-zAP" firstAttribute="top" secondItem="nt3-MG-1zK" secondAttribute="top" id="50h-E3-N4T"/>
                             <constraint firstItem="oUl-m6-rKT" firstAttribute="top" secondItem="aYx-Up-zAP" secondAttribute="bottom" id="6we-dz-SQV"/>
+                            <constraint firstItem="o4C-n9-Ri7" firstAttribute="leading" secondItem="nt3-MG-1zK" secondAttribute="leading" id="8fb-ho-2Ef"/>
+                            <constraint firstItem="o4C-n9-Ri7" firstAttribute="top" secondItem="Nr2-QB-ugx" secondAttribute="bottom" id="BN7-hs-ixm"/>
+                            <constraint firstItem="aYx-Up-zAP" firstAttribute="top" secondItem="Nr2-QB-ugx" secondAttribute="bottom" id="WpD-nf-Aya"/>
+                            <constraint firstItem="oUl-m6-rKT" firstAttribute="top" secondItem="o4C-n9-Ri7" secondAttribute="bottom" id="ehG-pl-hqt"/>
                             <constraint firstAttribute="trailing" secondItem="aYx-Up-zAP" secondAttribute="trailing" id="j1a-Mc-QBg"/>
                             <constraint firstItem="aYx-Up-zAP" firstAttribute="leading" secondItem="nt3-MG-1zK" secondAttribute="leading" id="mOi-hB-hyJ"/>
+                            <constraint firstAttribute="trailing" secondItem="o4C-n9-Ri7" secondAttribute="trailing" id="vvq-Gi-TCQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Q8r-SC-xcl">
@@ -70,7 +74,7 @@
             <objects>
                 <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="bEH-0x-FIH" customClass="OverviewTableViewController" customModule="Spendr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="PhK-c9-E18">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -139,7 +143,7 @@
             <objects>
                 <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="r02-Fh-1L5" customClass="BudgetTableViewController" customModule="Spendr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="YZ8-Q8-3Uj">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>

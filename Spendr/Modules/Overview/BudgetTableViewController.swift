@@ -20,14 +20,13 @@ class BudgetTableViewController: UITableViewController {
         super.viewDidLoad()
 
         // Setup bindings.
-        viewModel.expenses.bindTo(tableView, animated: false) { [weak self] indexPath, expenses, tableView -> UITableViewCell in
+        viewModel.expenseTypes.bindTo(tableView, animated: false) { [weak self] indexPath, expenseTypes, tableView -> UITableViewCell in
             guard let weakSelf = self else { return UITableViewCell() }
 
             let cell = weakSelf.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! BudgetTableViewCell
 
-            let expenseRecord = expenses[indexPath.row]
-            let expenseType = weakSelf.viewModel.expenseType(forExpense: expenseRecord)
-            cell.configure(expense: expenseRecord, expenseType: expenseType)
+            let expenseType = expenseTypes[indexPath.row]
+            cell.configure(expenseType: expenseType)
 
             return cell
         }
