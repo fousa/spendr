@@ -8,7 +8,7 @@
         <!--Toggle View Controller-->
         <scene sceneID="D6H-qQ-l5j">
             <objects>
-                <viewController id="E8G-gg-7iD" customClass="ToggleViewController" customModule="Spendr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="E8G-gg-7iD" customClass="ToggleViewController" customModule="Spendr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nr2-QB-ugx"/>
                         <viewControllerLayoutGuide type="bottom" id="oUl-m6-rKT"/>
@@ -68,7 +68,7 @@
         <!--Title-->
         <scene sceneID="Xas-Lr-rsV">
             <objects>
-                <tableViewController id="bEH-0x-FIH" customClass="OverviewTableViewController" customModule="Spendr" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="bEH-0x-FIH" customClass="OverviewTableViewController" customModule="Spendr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="PhK-c9-E18">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,22 +134,46 @@
             </objects>
             <point key="canvasLocation" x="1787" y="70"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Budget Table View Controller-->
         <scene sceneID="1xY-KA-UNM">
             <objects>
-                <tableViewController id="r02-Fh-1L5" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="YZ8-Q8-3Uj">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="r02-Fh-1L5" customClass="BudgetTableViewController" customModule="Spendr" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="YZ8-Q8-3Uj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="IiU-jR-74J">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="AYA-ll-Iqp" customClass="BudgetTableViewCell" customModule="Spendr" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IiU-jR-74J" id="J2C-te-dfp">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AYA-ll-Iqp" id="9JE-lk-TJs">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OXQ-xj-sgi">
+                                            <rect key="frame" x="8" y="8" width="100" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                            <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999,00 €" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3k-QF-oze">
+                                            <rect key="frame" x="455" y="12" width="137" height="36"/>
+                                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                            <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="OXQ-xj-sgi" firstAttribute="leading" secondItem="9JE-lk-TJs" secondAttribute="leadingMargin" id="9dA-n4-3Ps"/>
+                                        <constraint firstItem="OXQ-xj-sgi" firstAttribute="top" secondItem="9JE-lk-TJs" secondAttribute="topMargin" id="AEz-RM-rAG"/>
+                                        <constraint firstItem="f3k-QF-oze" firstAttribute="centerY" secondItem="9JE-lk-TJs" secondAttribute="centerY" id="lii-0x-4LW"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="f3k-QF-oze" secondAttribute="trailing" id="rUG-SI-X8x"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="expenseAmountLabel" destination="f3k-QF-oze" id="jXj-OJ-5I7"/>
+                                    <outlet property="expenseTypeLabel" destination="OXQ-xj-sgi" id="X3A-5I-HTz"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
