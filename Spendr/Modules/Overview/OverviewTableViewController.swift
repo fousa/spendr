@@ -36,10 +36,4 @@ class OverviewTableViewController: UITableViewController {
         }
     }
 
-    // MARK: - Status bar
-
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
-
 }

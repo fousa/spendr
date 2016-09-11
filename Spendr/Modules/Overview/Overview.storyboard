@@ -5,6 +5,66 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Toggle View Controller-->
+        <scene sceneID="D6H-qQ-l5j">
+            <objects>
+                <viewController id="E8G-gg-7iD" customClass="ToggleViewController" customModule="Spendr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nr2-QB-ugx"/>
+                        <viewControllerLayoutGuide type="bottom" id="oUl-m6-rKT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nt3-MG-1zK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o4C-n9-Ri7" userLabel="Budget Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <segue destination="r02-Fh-1L5" kind="embed" id="2HK-bb-r7v"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYx-Up-zAP" userLabel="Overview Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <segue destination="bEH-0x-FIH" kind="embed" id="XoW-MY-EEz"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aYx-Up-zAP" firstAttribute="top" secondItem="nt3-MG-1zK" secondAttribute="top" id="50h-E3-N4T"/>
+                            <constraint firstItem="oUl-m6-rKT" firstAttribute="top" secondItem="aYx-Up-zAP" secondAttribute="bottom" id="6we-dz-SQV"/>
+                            <constraint firstAttribute="trailing" secondItem="aYx-Up-zAP" secondAttribute="trailing" id="j1a-Mc-QBg"/>
+                            <constraint firstItem="aYx-Up-zAP" firstAttribute="leading" secondItem="nt3-MG-1zK" secondAttribute="leading" id="mOi-hB-hyJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Q8r-SC-xcl">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="ez6-bb-eJL">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Overview"/>
+                                <segment title="Budget"/>
+                            </segments>
+                        </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="vdQ-bT-scK">
+                            <connections>
+                                <segue destination="CXa-Ro-9ka" kind="unwind" unwindAction="unwindToDashboard:" id="oHZ-Ma-q3C"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="budgetContainerView" destination="o4C-n9-Ri7" id="aVK-uQ-MVg"/>
+                        <outlet property="overviewContainerView" destination="aYx-Up-zAP" id="1yV-9U-x6G"/>
+                        <outlet property="segmentedControl" destination="ez6-bb-eJL" id="JAI-f4-0PG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yg3-Kn-nBp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="CXa-Ro-9ka" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1072" y="70"/>
+        </scene>
         <!--Title-->
         <scene sceneID="Xas-Lr-rsV">
             <objects>
@@ -15,7 +75,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="aoJ-y9-lZ7" customClass="ExpenseTableViewCell" customModule="Spendr" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="60"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aoJ-y9-lZ7" id="Y0L-4o-Hs5">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
@@ -72,7 +132,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJt-1f-QJl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="WoI-zv-vbr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1108" y="70"/>
+            <point key="canvasLocation" x="1787" y="70"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="1xY-KA-UNM">
+            <objects>
+                <tableViewController id="r02-Fh-1L5" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="YZ8-Q8-3Uj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="IiU-jR-74J">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IiU-jR-74J" id="J2C-te-dfp">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="r02-Fh-1L5" id="ox0-tk-rqj"/>
+                            <outlet property="delegate" destination="r02-Fh-1L5" id="Hq9-nJ-6gM"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v9e-Sa-hWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1072" y="841"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jcm-Yc-Heg">
@@ -83,7 +171,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="bEH-0x-FIH" kind="relationship" relationship="rootViewController" id="SvK-cE-SPv"/>
+                        <segue destination="E8G-gg-7iD" kind="relationship" relationship="rootViewController" id="FC5-8G-Iod"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jTZ-02-pry" userLabel="First Responder" sceneMemberID="firstResponder"/>
