@@ -74,6 +74,7 @@ class CloudHandler {
 
         let predicate = NSPredicate(format: "date >= %@ AND date < %@", startDate, endDate)
         let query = CKQuery(recordType: "Expense", predicate: predicate)
+        query.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
         privateDatabase.performQuery(query, inZoneWithID: nil) { records, error in
             if let records = records {
                 printBreadcrumb("💰Fetched expenses", records.count)
