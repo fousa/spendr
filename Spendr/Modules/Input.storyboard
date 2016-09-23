@@ -1,9 +1,52 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H8e-Cz-bi2">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H8e-Cz-bi2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
+        <!--Date Selection View Controller-->
+        <scene sceneID="62h-UD-S1b">
+            <objects>
+                <viewController id="GT3-Rr-UGC" customClass="DateSelectionViewController" customModule="Spendr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RZc-in-UR4"/>
+                        <viewControllerLayoutGuide type="bottom" id="KlR-jv-vak"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vf7-pj-qBk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dn6-38-cBx">
+                                <rect key="frame" x="278" y="428" width="44" height="30"/>
+                                <state key="normal" title="Select"/>
+                                <connections>
+                                    <segue destination="C2H-Np-Pwk" kind="show" id="3qN-px-f2H"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="R9a-Mn-6c9">
+                                <rect key="frame" x="140" y="192" width="320" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="496336315.60093999">
+                                    <!--2016-09-23 15:11:55 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="nl_BE"/>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dn6-38-cBx" firstAttribute="centerX" secondItem="vf7-pj-qBk" secondAttribute="centerX" id="HmK-NN-bMN"/>
+                            <constraint firstItem="R9a-Mn-6c9" firstAttribute="centerX" secondItem="vf7-pj-qBk" secondAttribute="centerX" id="R27-Qp-jKS"/>
+                            <constraint firstItem="R9a-Mn-6c9" firstAttribute="centerY" secondItem="vf7-pj-qBk" secondAttribute="centerY" id="mwb-uO-pnr"/>
+                            <constraint firstItem="Dn6-38-cBx" firstAttribute="top" secondItem="R9a-Mn-6c9" secondAttribute="bottom" constant="20" id="y5m-C4-OGk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="R9a-Mn-6c9" id="K5J-UA-UtF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ypN-WF-76W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2618" y="357"/>
+        </scene>
         <!--Input View Controller-->
         <scene sceneID="ob1-q6-Uka">
             <objects>
@@ -50,10 +93,8 @@
                             <constraint firstItem="AWH-DE-wC9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="29B-vI-dVM" secondAttribute="leading" constant="10" id="w4N-Jd-2jW"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="03d-I2-xbv"/>
-                    </toolbarItems>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="amountLabel" destination="AWH-DE-wC9" id="L0V-Hb-eP8"/>
                         <outlet property="hiddenTextField" destination="2cY-FG-hq6" id="HHI-G8-jyK"/>
@@ -61,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9l7-ZX-INf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2645" y="357"/>
+            <point key="canvasLocation" x="3336" y="357"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="jI3-8e-C4H">
@@ -96,7 +137,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="C2H-Np-Pwk" kind="show" id="dGT-lf-nkt"/>
+                                    <segue destination="GT3-Rr-UGC" kind="show" id="TWQ-lm-AAt"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

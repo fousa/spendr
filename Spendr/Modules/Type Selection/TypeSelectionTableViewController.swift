@@ -31,7 +31,7 @@ class TypeSelectionTableViewController: UITableViewController {
             cell.textLabel?.text = expenseType.name
             cell.detailTextLabel?.text = expenseType.period
             return cell
-        }
+        }.disposeIn(rBag)
     }
 
     // MARK: - Segues
@@ -39,7 +39,7 @@ class TypeSelectionTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let
             selectedIndexPath = tableView.indexPathForSelectedRow,
-            controller = segue.destinationViewController as? InputViewController {
+            controller = segue.destinationViewController as? DateSelectionViewController {
             let expenseType = viewModel.expenseTypes.value[selectedIndexPath.row]
             controller.expenseType = expenseType
         }

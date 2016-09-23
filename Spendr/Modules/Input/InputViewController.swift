@@ -16,6 +16,7 @@ class InputViewController: UIViewController {
     // MARK: - Data
 
     var expenseType: ExpenseType!
+    var date: NSDate!
 
     // MARK: - Outlets
 
@@ -43,7 +44,7 @@ class InputViewController: UIViewController {
 
     @IBAction func save(sender: AnyObject) {
         if viewModel.valid {
-            viewModel.save(expenseType: expenseType)
+            viewModel.save(expenseType: expenseType, date: date)
             self.success()
         } else {
             error()

@@ -49,10 +49,10 @@ class InputViewModel: NSObject {
 
     // MARK: - Creation
 
-    func save(expenseType expenseType: ExpenseType) {
+    func save(expenseType expenseType: ExpenseType, date: NSDate) {
         let expense = Expense(expenseType: expenseType)
         expense.amount = amount.value
-        expense.createdAt = NSDate()
+        expense.createdAt = date
 
         printBreadcrumb("💰Saving", expense.expenseType?.name, expense.amount, expense.createdAt)
         try! DatabaseHandler.shared.save(expense: expense)
