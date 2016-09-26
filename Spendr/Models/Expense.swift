@@ -32,7 +32,7 @@ class Expense: Object {
     var record: CKRecord {
         let record = CKRecord(recordType: "Expense")
         record["amount"] = amount
-        record["date"] = NSDate()
+        record["date"] = createdAt
         if let expenseType = expenseType {
             let recordID =  CKRecordID(recordName: expenseType.recordName)
             record["type"] = CKReference(recordID: recordID, action: .None)
